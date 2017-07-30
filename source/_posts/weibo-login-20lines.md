@@ -25,6 +25,8 @@ pip3 install selenium  # 如果你使用 Python 2 ，请使用 pip install selen
 
 仅仅安装 Selenium 本身是不够的，你同时还需要安装 Driver 。你可以将 Driver 理解为浏览器本身的『驱动』，在程序中使用 Driver 就相当于你打开了一个浏览器做了些什么事情。
 
+<!--more-->
+
 在这里我们推荐几个 Driver ：
 
 1. Firefox: https://github.com/mozilla/geckodriver/releases
