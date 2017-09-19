@@ -99,7 +99,7 @@ $ tldr ssh
 
 最简单的使用方法是打开[网页版](https://tldr.ostera.io/)。在上方的搜索框中找到你想查看的命令。例如：
 
-![网页版的 TLDR](/Users/Linda/Desktop/Screen Shot 2017-09-19 at 17.05.39 1.png)
+![网页版的 tldr](http://osvlzj5nm.bkt.clouddn.com/17-9-20/91829078.jpg)
 
 
 
@@ -119,8 +119,9 @@ npm install -g tldr
 
 TLDR 的官网也给除了其他一些安装方式：
 
-| [Ruby client](https://github.com/YellowApple/tldrb) | `gem install tldrb`                      |
+| Client                                   | Installation instructions                |
 | ---------------------------------------- | ---------------------------------------- |
+| [Ruby client](https://github.com/YellowApple/tldrb) | `gem install tldrb`                      |
 | [Haskell client](https://github.com/psibi/tldr-hs) | `stack install tldr`                     |
 | [Python client](https://github.com/lord63/tldr.py) | `pip install tldr.py`                    |
 | [C++ client](https://github.com/tldr-pages/tldr-cpp-client) | `brew install tldr`                      |
@@ -129,8 +130,6 @@ TLDR 的官网也给除了其他一些安装方式：
 | [Dash for OSX](https://github.com/Moddus/tldr-python-dash-docset) | open `Preferences > Downloads > User Contributed` and find `tldr pages` in the list |
 | [Bash client](https://github.com/pepa65/tldr-bash-client) | `bpkg install pepa65/tldr`               |
 
-
-
-## 使用方法
+##使用方法
 
 简单而言，你只要在命令行输入 `tldr` 加上任何命令即可，例如 `tldr ssh` 或是 `tldr tar`，你就可以获得在第一节中所见的简洁的介绍啦！
