@@ -1,6 +1,6 @@
 ---
 title: '[LeetCode] 3. Longest Substring Without Repeating Characters'
-date: 2018-07-03
+date: 2018-07-03 22:00:00
 category: 解题报告
 tags: 
 - 解题报告
