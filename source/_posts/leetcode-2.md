@@ -1,5 +1,5 @@
 ---
-title: [LeetCode] 2. Add Two Numbers
+title: '[LeetCode] 2. Add Two Numbers'
 date: 2018-07-03
 category: 解题报告
 tags: 
