@@ -1,5 +1,5 @@
 ---
-title: 【LeetCode】189. Rotate Array
+title: [LeetCode] 189. Rotate Array
 date: 2018-07-02
 category: 解题报告
 tags: 
