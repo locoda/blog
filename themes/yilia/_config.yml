@@ -68,10 +68,10 @@ top: true
 # Miscellaneous
 baidu_analytics: ''
 google_analytics: ''
-favicon: http://locoda.github.io/favicon.ico
+favicon: /favicon.ico
 
 #你的头像url
-avatar: https://avatars1.githubusercontent.com/u/8491185
+avatar: /avatar.jpg
 
 #是否开启分享
 share_jia: false
