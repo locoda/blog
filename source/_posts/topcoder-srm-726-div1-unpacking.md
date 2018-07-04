@@ -19,21 +19,6 @@ The holidays are near. Hero would like to buy some candies, so he went to the st
 
 <!--more-->
 
-### Definition
-
-- ClassUnpacking
-- Methodgetcost
-- Parametersvector<int> , vector<int> , vector<int> , int
-- Returnsint
-- Method signatureint getcost(vector<int> a, vector<int> b, vector<int> cost, int K)
-
-(be sure your method is public)
-
-### Limits
-
-- Time limit (s)2.000
-- Memory limit (MB)256
-
 ### Constraints
 
 - **a**, **b** and **cost** will contain the same number of elements.
