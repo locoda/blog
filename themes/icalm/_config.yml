@@ -32,3 +32,5 @@ disqus:
 
 # Miscellaneous
 favicon: /favicon.ico
+
+mathjax: true

@@ -12,9 +12,11 @@
     </div>
 </div>
 <%- js('js/pager/dist/singlepager.js') %>
+<% if (theme.mathjax){ %>
+    <%- partial('_partial/mathjax') %>
+<% } %>
 <script>
 var sp = new Pager('data-pager-shell')
-
 </script>
 </body>
 </html>
