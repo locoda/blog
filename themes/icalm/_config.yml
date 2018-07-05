@@ -6,7 +6,7 @@ menu:
 
 # Pictures shown on the sidebar
 # Use the absolute URL after generating
-avatar: /avatar.jpg
+avatar: /images/avatar.jpg
 # sidebar_background: /assets/header.png
 
 rss: /atom.xml
