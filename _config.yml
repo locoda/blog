@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 乙醚的博客
+title: 乙醚的博客 
 subtitle: 有趣是给别人的，快乐是给自己的。
 description:
 author: 乙醚
@@ -72,7 +72,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: yilia 
+theme: icalm 
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

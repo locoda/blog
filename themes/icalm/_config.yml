@@ -1,0 +1,34 @@
+# Links on sidebar
+menu:
+  首页: /
+  所有文章: /archives/
+  分类查看: /categories/
+
+# Pictures shown on the sidebar
+# Use the absolute URL after generating
+avatar: /avatar.jpg
+# sidebar_background: /assets/header.png
+
+rss: /atom.xml
+
+# Content
+excerpt_link: Read On »
+
+# Will be shown on the bottom.
+## To add new icon, just copy .svg to source/assets/ and add entries below.
+media:
+  github: https://github.com/locoda
+  # facebook: https://www.facebook.com/profile.php?id=100004252391322
+
+source_han_font: true
+
+# Disqus settings
+disqus:
+  # 'disabled' | 'all' | 'post'
+  enable: disabled
+  # Shortname of your disqus website.
+  # See disqus admin
+  shortname:
+
+# Miscellaneous
+favicon: /favicon.ico
