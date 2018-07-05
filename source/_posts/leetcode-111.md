@@ -94,11 +94,9 @@ class Solution:
         if not root:
             return 0
         
-        max_depth = 1
         check = [(root, 1)]
         while check:
             node, depth = check.pop(0)
-            max_depth = max(max_depth, depth)
             if not node.left and not node.right:
                 break
             if node.left:
@@ -106,7 +104,7 @@ class Solution:
             if node.right:
                 check.append((node.right, depth+1))
                 
-        return max_depth
+        return depth
 ```
 
 
