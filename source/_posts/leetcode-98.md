@@ -1,6 +1,6 @@
 ---
 title: '[LeetCode] 98. Validate Binary Search Tree'
-date: 2018-07-04 22:20:12
+date: 2018-07-07 21:46:12
 category: 解题报告
 tags: 
 - 解题报告
