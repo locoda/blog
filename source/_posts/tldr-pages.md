@@ -99,10 +99,7 @@ $ tldr ssh
 
 ## 网页版
 
-最简单的使用方法是打开[网页版](https://tldr.ostera.io/)。在上方的搜索框中找到你想查看的命令。例如：
-
-![网页版的 tldr](http://osvlzj5nm.bkt.clouddn.com/17-9-20/91829078.jpg)
-
+最简单的使用方法是打开[网页版](https://tldr.ostera.io/)。在上方的搜索框中找到你想查看的命令。
 
 
 ## Node.js 版本

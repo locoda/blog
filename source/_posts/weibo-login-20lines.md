@@ -67,8 +67,6 @@ driver = webdriver.Firefox(executable_path="/path/to/geckodriver")
 
 右键登录的地方并审查元素，你会发现用户名和密码其实是简单的输入框，而登录按钮是一个链接而已。
 
-![](http://osvlzj5nm.bkt.clouddn.com/17-7-14/91396431.jpg)
-
 因此我们简单规划之后要做的事情：
 
 1. 输入用户名和密码
