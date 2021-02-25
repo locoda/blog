@@ -35,7 +35,7 @@
     "sass-loader": "^4.0.2",
     "style-loader": "^2.0.0",
     "url-loader": "^0.5.7",
-    "webpack": "^1.13.2"
+    "webpack": "^5.24.2"
   },
   "dependencies": {
     "babel-core": "6.24.0",
