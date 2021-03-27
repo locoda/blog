@@ -15,7 +15,7 @@
     "hexo-generator-json-content": "^4.2.3",
     "hexo-generator-tag": "^1.0.0",
     "hexo-html-minifier": "^1.0.0",
-    "hexo-katex": "0.0.9",
+    "hexo-katex": "0.0.13",
     "hexo-renderer-ejs": "^0.2.0",
     "hexo-renderer-marked": "^4.0.0",
     "hexo-renderer-pandoc": "^0.3.0",
