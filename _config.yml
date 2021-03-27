@@ -73,9 +73,6 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: icalm 
 
-# pandoc:
-#   mathEngine: mathjax
-
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
