@@ -74,7 +74,7 @@ pagination_dir: page
 theme: icalm 
 
 pandoc:
-  mathEngine: katex
+  mathEngine: mathjax
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
