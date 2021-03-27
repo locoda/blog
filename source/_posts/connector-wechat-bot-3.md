@@ -1,7 +1,7 @@
 ---
 title: 从零开始微信机器人（三）：表情机器人的制作
 date: 2017-06-25
-category: 计算机课堂
+category: 知识课堂
 tags: 
 - Python
 - 聊天机器人

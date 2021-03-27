@@ -1,7 +1,7 @@
 ---
 title: 第一次的机器学习：决策树与随机森林
 date: 2017-08-15
-category: 计算机课堂
+category: 知识课堂
 tags: 
 - 机器学习
 ---

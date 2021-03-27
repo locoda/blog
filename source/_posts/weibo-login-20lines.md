@@ -1,7 +1,7 @@
 ---
 title: 猴子都能学会的20行代码登录微博
 date: 2017-07-14
-category: 计算机课堂
+category: 知识课堂
 tags: 
 - Python
 - 爬虫

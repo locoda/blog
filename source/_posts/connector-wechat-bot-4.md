@@ -1,7 +1,7 @@
 ---
 title: 从零开始微信机器人（四）：监控机器人程序
 date: 2017-06-26
-category: 计算机课堂
+category: 知识课堂
 tags: 
 - Python
 - 聊天机器人

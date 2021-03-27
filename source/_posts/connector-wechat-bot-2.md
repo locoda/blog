@@ -1,7 +1,7 @@
 ---
 title: 从零开始微信机器人（二）：使用图灵机器人和api.ai相关接口
 date: 2017-06-24
-category: 计算机课堂
+category: 知识课堂
 tags: 
 - Python
 - 聊天机器人

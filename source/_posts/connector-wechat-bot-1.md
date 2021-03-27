@@ -1,7 +1,7 @@
 ---
 title: 从零开始微信机器人（一）：wxpy简介
 date: 2017-06-23
-category: 计算机课堂
+category: 知识课堂
 tags: 
 - Python
 - 聊天机器人
