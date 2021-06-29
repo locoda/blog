@@ -1,5 +1,5 @@
 ---
-title: '[定时更新 Vol.1] 乍暖还寒时'
+title: 'Vol.1/ 乍暖还寒时'
 date: 2021-04-30
 category: 定时更新
 tags:

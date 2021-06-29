@@ -1,5 +1,5 @@
 ---
-title: '[定时更新 Vol.0] 春天来了，阳光来了'
+title: 'Vol.0/ 春天来了，阳光来了'
 date: 2021-03-31
 category: 定时更新
 tags:

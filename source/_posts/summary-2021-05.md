@@ -1,5 +1,5 @@
 ---
-title: '[定时更新 Vol.2] 梦与梦'
+title: 'Vol.2/ 梦与梦'
 date: 2021-05-31
 category: 定时更新
 tags:
