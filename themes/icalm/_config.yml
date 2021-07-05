@@ -36,4 +36,8 @@ disqus:
 # Miscellaneous
 favicon: /favicon.png
 
+# Open-Graph
+og-image: /images/og.webp
+og-twitter-id: 1mEther
+
 mathjax: true

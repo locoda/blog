@@ -3,7 +3,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title><% if (page.title){ %><%= page.title %> | <% } %><%= config.title %></title>
-  <%- open_graph() %>
+  <%- open_graph({
+    image: "<%- theme.og-image %>",
+    twitter_id: "<%- theme.og-twitter-id %>",
+  }) %>
   <% if (theme.favicon) { %>
     <link rel="icon" href="<%- theme.favicon %>">
   <% } %>
