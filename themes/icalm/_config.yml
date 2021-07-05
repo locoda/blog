@@ -21,7 +21,8 @@ media:
   weibo: "http://weibo.com/locoda"
   # zhihu: "https://www.zhihu.com/people/locoda/"
   # jianshu: "https://www.jianshu.com/u/bf74b87a31b2"
-  bilibili: "https://space.bilibili.com/419152/#/"
+  # bilibili: "https://space.bilibili.com/419152/#/"
+  telegram: "https://t.me/ethersdaily"
 
 source_han_font: true
 
@@ -37,7 +38,7 @@ disqus:
 favicon: /favicon.png
 
 # Open-Graph
-og-image: /images/og.webp
-og-twitter-id: 1mEther
+# og-image: /images/og.webp
+# og-twitter-id: 1mEther
 
 mathjax: true
