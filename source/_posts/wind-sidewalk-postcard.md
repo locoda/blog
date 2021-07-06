@@ -3,6 +3,7 @@ title: 风、人行道、明信片
 date: 2021-07-05
 category: 纯属虚构
 tags:
+  - 三题作文
 ---
 
 > 本题来自2021年7月5日的[遠子學姐的三題作文產生器](https://cn.shindanmaker.com/250356)
