@@ -12,7 +12,7 @@ layout: false
     <title>乙醚的小烧杯 | 乙醚的博客</title>
     <meta
       name="description"
-      content='My Blog                           body { font-family: Avenir, Helvetica, Arial, sans-serif }                               Vue.createApp().component("tg-blog", TgBlog.TgBlog).mount(&#39;#app&#39;)'
+      content='我的Telegram频道“乙醚的小烧杯”的镜像（非实时更新）'
     />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="乙醚的小烧杯" />
@@ -20,7 +20,7 @@ layout: false
     <meta property="og:site_name" content="乙醚的博客" />
     <meta
       property="og:description"
-      content='My Blog                           body { font-family: Avenir, Helvetica, Arial, sans-serif }                               Vue.createApp().component("tg-blog", TgBlog.TgBlog).mount(&#39;#app&#39;)'
+      content='我的Telegram频道“乙醚的小烧杯”的镜像（非实时更新）'
     />
     <meta property="og:locale" content="zh_CN" />
 
