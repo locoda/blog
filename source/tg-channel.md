@@ -37,7 +37,7 @@ layout: false
 <body>
   <!-- Template setup (Paste your data url here) -->
   <div id="app">
-    <tg-blog posts-url="https://my-telegram-channel-data.pages.dev/exports/ethersdaily/posts.json"></tg-blog>
+    <tg-blog posts-url="https://tg.1mether.me/posts.json"></tg-blog>
   </div>
 
   <!-- Vue js setup -->
