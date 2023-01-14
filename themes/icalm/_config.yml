@@ -22,7 +22,7 @@ media:
   # zhihu: "https://www.zhihu.com/people/locoda/"
   # jianshu: "https://www.jianshu.com/u/bf74b87a31b2"
   # bilibili: "https://space.bilibili.com/419152/#/"
-  telegram: "/tg-channel/"
+  telegram: "/tg-channel"
 
 source_han_font: true
 

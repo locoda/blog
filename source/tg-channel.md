@@ -7,7 +7,6 @@ date: 2023-01-13
 我的Telegram频道[“乙醚的小烧杯”](https://t.me/ethersdaily)的镜像（非实时更新）
 
 {% raw %}
-
 <!-- Import Libraries -->
 <script src="https://unpkg.com/vue@3"></script>
 <script src="https://unpkg.com/tg-blog"></script>
@@ -32,11 +31,11 @@ date: 2023-01-13
 
 <!-- Vue js setup -->
 <script>
-const app = Vue.createApp().component("tg-blog", TgBlog.TgBlog)
+var app = Vue.createApp().component("tg-blog", TgBlog.TgBlog)
 app.mount('#tg-blog-app')
 
 // Destroy app when page switched
-const interval = setInterval(() => {
+var interval = setInterval(() => {
     if (!document.getElementById('tg-blog-app')) 
     {
         app.unmount()
@@ -44,5 +43,4 @@ const interval = setInterval(() => {
     }
 }, 1000)
 </script>
-
 {% endraw %}
