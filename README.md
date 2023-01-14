@@ -1,2 +1,2 @@
 # blog
-blog powered by hexo and deploy by netlify @ https://blog.1mether.me/
+blog powered by Hexo and deploy by Cloudflare Pages @ https://blog.1mether.me/
