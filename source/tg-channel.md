@@ -8,8 +8,6 @@ date: 2023-01-13
 
 {% raw %}
 <!-- Import Libraries -->
-<script src="https://unpkg.com/vue@3"></script>
-<script src="https://unpkg.com/tg-blog"></script>
 <link rel="stylesheet" href="https://unpkg.com/tg-blog/dist/style.css">
 
 <!-- Styles & Patches -->
