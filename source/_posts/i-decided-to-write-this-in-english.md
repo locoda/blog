@@ -17,7 +17,7 @@ I never assumed English would become such a thing for me, definitely not when I 
 
 <br />
 
-For sure, it is unavoidable to take therapy sessions in English in the States. Did I get a chance to use Chinese in the therapy in the past 7 or 8 years? Yes. Did I every consider the option? Never. 
+For sure, it is unavoidable to take therapy sessions in English in the States. Did I get a chance to use Chinese in the therapy in the past 7 or 8 years? Yes. Did I ever consider the option? Never. 
 
 The English me is only 10 years old. It is younger yet more mature. A lot of things is fixable for the English me because it is not associated with the place I grew up or the experience I had in China. I talked about those in English; but it felt more like I was talking about someone else. It is more objective, less emotional, and if I qoute my therapists, my thoughts towards my past experience is "thoughtful" or "insightful". Do I agree? Yes. However, I know that the way I describe them are not genuinely thoughtful, it became thoughtful when I start to construct the things in English. I had to rehearse what I want to say in pure English so that the scenario can be understood in English, and I had to add correct amount of context and explanation to make it sensible. It's a hard process, and it has to be "thoughtful".
 
