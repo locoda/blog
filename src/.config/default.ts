@@ -72,7 +72,7 @@ export const defaultConfig: ThemeConfig = {
     },
   },
   seo: {
-    twitter: '@moeyua13',
+    twitter: '',
     meta: [],
     link: [],
   },
