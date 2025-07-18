@@ -2,7 +2,7 @@
 title: '[LeetCode] 189. Rotate Array'
 pubDate: 2018-07-02
 categories: ["解题报告"]
-tags: 
+tags:
 - 解题报告
 - LeetCode
 - Python
@@ -28,13 +28,12 @@ rotate 2 steps to the right: [6,7,1,2,3,4,5]
 rotate 3 steps to the right: [5,6,7,1,2,3,4]
 ```
 
-
 **Example 2:**
 
 ```
 Input: [-1,-100,3,99] and k = 2
 Output: [3,99,-1,-100]
-Explanation: 
+Explanation:
 rotate 1 steps to the right: [99,-1,-100,3]
 rotate 2 steps to the right: [3,99,-1,-100]
 ```
@@ -45,8 +44,6 @@ rotate 2 steps to the right: [3,99,-1,-100]
 
 - Could you do it in-place with O(1) extra space?
 
-  
-
 ## 解题报告
 
 ### 思路
@@ -54,8 +51,6 @@ rotate 2 steps to the right: [3,99,-1,-100]
 这是一道原题相对简单的模拟题。要写出一个简单能够通过而不超时的方法并不难，只要利用至多k元素的空间，就可以完成数组的拆解和重新拼接。
 
 难点在思考题中的 **O(1) extra space** 部分。这说明我们只能使用常数个临时元素，而这个常数不能随数组长度或事 k 的大小而变化。因此，我们使用 k 个元素的临时数组完成交换的想法是无法实现的。因此解法涉及到一些想法和数论知识。
-
-
 
 ### 方法一：暴力拆解
 
@@ -71,7 +66,7 @@ class Solution(object):
         """
         k = k % len(nums)
         nums[:] = nums[len(nums)-k:] + nums[:len(nums)-k]
-        # 或是利用 Python 负数 index 的特性：nums[:] = nums[-k:] + nums[:-k] 
+        # 或是利用 Python 负数 index 的特性：nums[:] = nums[-k:] + nums[:-k]
 ```
 
 需要提示的是，虽然不进行第一步的取模操作也仍然能通过，我还是建议对 k 取模以保证解法的严谨性，因为题目中从未保证 k 是一个小于 n 的数字。
@@ -82,9 +77,7 @@ class Solution(object):
 
 该算法的时间复杂度可以视作 O(1)，但数组的拆解利用了额外 O(n) 的空间。
 
-
-
-### 方法二：循环更新 
+### 方法二：循环更新
 
 循环更新的方法更多的思考，但是也是为数不多时间复杂度够好也仅用 O(1) 空间复杂度的方法。
 
@@ -116,20 +109,18 @@ class Solution(object):
             if count == len(nums):
                 break
             temp = nums[start]
-            curr = (start + k) % len(nums) 
+            curr = (start + k) % len(nums)
             while curr != start:
                 nums[curr], temp = temp, nums[curr]
                 curr = (curr + k) % len(nums)
                 count += 1
             nums[curr] = temp
-            count += 1    
+            count += 1
 ```
 
 #### 复杂度
 
 由于每个数字只被更新一次，时间复杂度为 O(n)；由于只用了常数个临时变量（count, start, curr, temp），空间复杂度为 O(1)
-
-
 
 ## 结语
 

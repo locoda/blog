@@ -2,7 +2,7 @@
 title: '[TopCoder-SRM 726] Unpacking'
 pubDate: 2018-07-03 22:46:50
 categories: ["解题报告"]
-tags: 
+tags:
 - 解题报告
 - TopCoder
 - 动态规划
@@ -17,7 +17,6 @@ tags:
 
 The holidays are near. Hero would like to buy some candies, so he went to the store. In the store he found some boxes. Each box has a label with three positive integers **a**[i], **b**[i], and **cost**[i]. Their meaning is as follows: Obviously, **cost**[i] is the amount Hero has to pay to buy this box. The other two numbers promise that the box will contain exactly **a**[i] red candies and exactly **b**[i] blue candies (and nothing else). Hero knows that the total number of candies always matches the label, but the colors sometimes don't. Sometimes, exactly one candy in the box has the opposite color. Thus, for each box we have three possibilities: instead of (**a**[i] red, **b**[i] blue) we can also get (**a**[i]+1 red, **b**[i]-1 blue) or (**a**[i]-1 red, **b**[i]+1 blue). Hero is going to buy some of the boxes. Then, he will bring them home, he will unpack all boxes and pool all candies together. Hero will be happy if the final pile of candies will contain at least **K** candies of the same color. Find the cheapest set of boxes such that it is guaranteed that Hero will be happy if he buys these boxes. Return the cost of that set of boxes. If it is impossible to guarantee Hero's happiness, return -1 instead.
 
-
 ### Constraints
 
 - **a**, **b** and **cost** will contain the same number of elements.
@@ -28,8 +27,6 @@ The holidays are near. Hero would like to buy some candies, so he went to the st
 ### Test cases
 
 太长了，请去原网站看吧……
-
-
 
 ## 解题报告
 

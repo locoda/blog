@@ -2,7 +2,7 @@
 title: '[LeetCode] 98. Validate Binary Search Tree'
 pubDate: 2018-07-07 21:46:12
 categories: ["解题报告"]
-tags: 
+tags:
 - 解题报告
 - LeetCode
 - Python
@@ -43,13 +43,9 @@ Explanation: The input is: [5,1,4,null,null,3,6]. The root node's value
              is 5 but its right child's value is 4.
 ```
 
- 
-
 ## 解题报告
 
 这题主要考查的是二叉搜索树的性质，也就是对于每一个节点来说，它左子树的所有元素都小于它，而右子树的所有元素都大于它。也就是说二叉搜索树在本题中不允许出现两个节点值相同的情况。
-
-
 
 ### 方法一：前序遍历检查是否满足顺序
 
@@ -65,7 +61,7 @@ class Solution:
         self.traverse = []
         self.dfs(root)
         return all(a < b for a, b in zip(self.traverse, self.traverse[1:]))
-        
+
     def dfs(self, node):
         if not node:
             return
@@ -73,8 +69,6 @@ class Solution:
         self.traverse.append(node.val)
         self.dfs(node.right)
 ```
-
-
 
 ### 方法二：另一种利用性质的递归
 
@@ -92,7 +86,7 @@ def check_node(node, l, r):
         if not node:
             return True
         return l < node.val and node.val < r and check_node(node.left, l, node.val) and check_node(node.right, node.val, r)
-    
+
 class Solution:
     def isValidBST(self, root):
         """
@@ -102,4 +96,3 @@ class Solution:
         l, r = float("-inf"), float("inf")
         return check_node(root, l, r)
 ```
-

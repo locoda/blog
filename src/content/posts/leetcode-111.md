@@ -2,7 +2,7 @@
 title: '[LeetCode] 111. Minimum Depth of Binary Tree'
 pubDate: 2018-07-04 22:20:12
 categories: ["解题报告"]
-tags: 
+tags:
 - 解题报告
 - LeetCode
 - Python
@@ -32,16 +32,11 @@ Given binary tree `[3,9,20,null,null,15,7]`,
 
 return its minimum depth = 2.
 
-
-
-
 ## 解题报告
 
 ### 思路
 
 反正就是，有叶子就往下找，没叶子就完事儿了嘛～
-
-
 
 ### 方法一：递归
 
@@ -70,8 +65,6 @@ class Solution:
         return min(self.minDepth(root.left), self.minDepth(root.right)) + 1
 ```
 
-
-
 ### 方法二：递推
 
 按从上往下的顺序往列表里加节点，一旦节点没有叶子了，就可以直接返回了！
@@ -92,7 +85,7 @@ class Solution:
         """
         if not root:
             return 0
-        
+
         check = [(root, 1)]
         while check:
             node, depth = check.pop(0)
@@ -102,12 +95,10 @@ class Solution:
                 check.append((node.left, depth+1))
             if node.right:
                 check.append((node.right, depth+1))
-                
+
         return depth
 ```
 
-
-
 ## 结语
 
-虽然很简单，但是越简单的题目越是能看出基础的好坏，而且也更容易往外拓展出更多题呢 (〃∀〃) 
+虽然很简单，但是越简单的题目越是能看出基础的好坏，而且也更容易往外拓展出更多题呢 (〃∀〃)

@@ -5,7 +5,7 @@ import type { ThemeConfig } from '~/types'
 
 export const defaultConfig: ThemeConfig = {
   site: {
-    title: '乙立方醚',
+    title: '一立方米',
     subtitle: '1 Cubic Meter',
     author: '乙醚',
     description: '有趣是给别人的，快乐是给自己的。',
@@ -68,7 +68,7 @@ export const defaultConfig: ThemeConfig = {
     fonts: {
       header:
         '"HiraMinProN-W6","Source Han Serif CN","Source Han Serif SC","Source Han Serif TC",serif',
-      ui: '"Source Sans Pro","Roboto","Helvetica","Helvetica Neue","Source Han Sans SC","Source Han Sans TC","PingFang SC","PingFang HK","PingFang TC",sans-serif',
+      ui: '"Helvetica","Helvetica Neue","Source Sans Pro","Roboto","Source Han Sans SC","Source Han Sans TC","PingFang SC","PingFang HK","PingFang TC",sans-serif',
     },
   },
   seo: {

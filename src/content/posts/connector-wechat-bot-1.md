@@ -2,7 +2,7 @@
 title: 从零开始微信机器人（一）：wxpy简介
 pubDate: 2017-06-23
 categories: ["知识课堂"]
-tags: 
+tags:
 - Python
 - 聊天机器人
 ---
@@ -11,12 +11,9 @@ tags:
 
 现在，由于itchat的更新和被wxpy一些更有趣的功能所吸引，我计划将这个机器人分步重写，并将完整的机器人构建步骤展现给大家。这是我第一次做这样的事，有诸多不足之处，也希望多多谅解和指正。
 
-
 本文很大程度上面向仅对python入门或是了解较少的开发者因此较为详细，希望最大程度上帮助大家从零开始构建一个属于自己的微信机器人，哪怕仅有很少的编程基础。每一篇会将长度控制在较短、能够快速阅读完的范围内。
 
 本文基于python 2.7，与python 3.5可能有语法上区别。
-
-
 
 ## 安装wxpy
 
@@ -33,8 +30,6 @@ pip install -U wxpy
 ```shell
 pip install -U wxpy -i "https://pypi.doubanio.com/simple/"
 ```
-
-
 
 ## 登录微信
 
@@ -64,8 +59,6 @@ bot = Bot(console_qr=True)
 bot = Bot(console_qr=True, cache_path=True)
 ```
 
-
-
 ## 发送消息
 
 首先我们尝试给自己和文件传输助手发消息：
@@ -77,7 +70,7 @@ bot.self.send('Hello World!')
 bot.file_helper.send('Hello World!')
 ```
 
-如果无法给机器人自身发送消息，请参考http://wxpy.readthedocs.io/zh/latest/bot.html#wxpy.Bot.self
+如果无法给机器人自身发送消息，请参考<http://wxpy.readthedocs.io/zh/latest/bot.html#wxpy.Bot.self>
 
 ```python
 # 查找昵称为'乙醚。'的好友
@@ -102,9 +95,7 @@ my_friend.send('@img@my_picture.png')
 
 通过使用这些方法，我们就可以自定义一个在合适的时候做合适的事情的机器人了！
 
-由于群聊机器人设计暂时需要好友相关内容不多，此处不再作过过多赘述，如果有需要搜索好友的可以参考http://wxpy.readthedocs.io/zh/latest/chats.html#module-wxpy
-
-
+由于群聊机器人设计暂时需要好友相关内容不多，此处不再作过过多赘述，如果有需要搜索好友的可以参考<http://wxpy.readthedocs.io/zh/latest/chats.html#module-wxpy>
 
 ## 自动处理消息
 
@@ -137,9 +128,9 @@ def reply_self(msg):
 # 这条注册消息是我们构建群聊机器人的基础
 @bot.register(Group, TEXT)
 def print_group_msg(msg):
-	if msg.is_at:
-	    print(msg)
-	    msg.reply(meg.text)
+ if msg.is_at:
+     print(msg)
+     msg.reply(meg.text)
 ```
 
 当然仅仅写以上内容，会导致你的程序主程序运行结束自然退出。wxpy给出了`embed()`方法，在程序末尾（或其他你想要暂停调试的地方）加上`embed()`方法就可以让程序保持运行，同时进入Python命令行。
@@ -153,13 +144,11 @@ embed()
 # bot.join()
 ```
 
-关于消息注册的文档，更多内容可以参考http://wxpy.readthedocs.io/zh/latest/messages.html#id11
+关于消息注册的文档，更多内容可以参考<http://wxpy.readthedocs.io/zh/latest/messages.html#id11>
 
 现在，你已经可以用这个微信机器人和自动回复消息玩了！刺不刺激呢！
 
 下一篇中，我将就如何将API接入机器人进行阐述。
-
-
 
 # 你可能会遇到的一些问题
 
@@ -176,7 +165,7 @@ pip install -U requests[security]
 进如python后运行：
 
 ```python
-import certifi 
+import certifi
 print(certifi.old_where())
 ```
 

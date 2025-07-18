@@ -2,12 +2,10 @@
 title: TLDR pages：简易版的 man pages
 pubDate: 2017-09-19
 categories: ["软件推荐"]
-tags: 
+tags:
 - 软件
 - 命令行
 ---
-
-
 
 # 什么是TLDR？
 
@@ -48,7 +46,6 @@ DESCRIPTION
 ```
 
 以下省略一万字……
-
 
 于是想找如何使用私钥登录的你感到了一阵绝望……（虽然它确实存在于[-i identity_file]这里，你找到了吗？）
 
@@ -92,14 +89,11 @@ $ tldr ssh
 
 它是一个开源的项目，每个人都可以为它贡献或修改其中的 page。如果你想去围观这个作品，可以到 [**tldr**](https://github.com/tldr-pages/tldr) 这个 GitHub 代码仓库去做出一些自己的贡献。
 
-
-
 # 安装和使用
 
 ## 网页版
 
 最简单的使用方法是打开[网页版](https://tldr.ostera.io/)。在上方的搜索框中找到你想查看的命令。
-
 
 ## Node.js 版本
 
@@ -110,8 +104,6 @@ npm install -g tldr
 ```
 
 如果你不了解以下一接中提到的任何一种编程语言/包管理器（当然我觉得这种情况也不需要这个破软件就是了），我们也在这里推荐使用 npm 安装。如果你还没有 npm， 可以到[这里](https://www.npmjs.com/get-npm)下载。
-
-
 
 ## 其他版本
 

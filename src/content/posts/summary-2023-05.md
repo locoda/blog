@@ -11,7 +11,6 @@ tags:
 
 不确定是因为什么而感到疲劳——确实很忙碌，到处奔波，总觉得也不至于累成这样，但真的觉得很累。事实上也算不上是精疲力尽，好像也尽可能地安排了很多时间躺在床上，但终究没有恢复到能从果断地离开床铺的精力水平。也就这样了，被子终于换成了夏天的，只是还要再加上毯子才不觉得冷，但夏天终于算是要来了吧。
 
-
 又到了毕业季。五月初到底还是回了普渡，蓝天白云农田风车，还是一个老样子，但今年大概是最后一年了。今天查看天气的时候发现手机里还存了西拉法叶这个地方，怕是再过一阵子就该彻底删除了。
 
 这次回普渡也没什么特别的。短暂地停留、吃熟悉的餐厅，在校园里那些拍了无数遍的景点再拍一次照片，好像和每一次开车前往芝加哥一样地离开，我却在想会不会是最后一次离开这里了。或许会是，或许不是，现在的我不知道，直到再到普渡的那一天才会知晓，但到那时，那次的离开也不知道会不会是最后一次了。
@@ -40,5 +39,4 @@ tags:
 
 看[孙燕姿的博客](https://www.makemusic.sg/blog/wodeai)也同样觉得中文的翻译失去了意境。用她的话来结束这一篇博客好了：
 
-> In this boundless sea of existence, where anything is possible, where nothing matters, I think it will be purity of thought, that being exactly who you are will be enough. 
-
+> In this boundless sea of existence, where anything is possible, where nothing matters, I think it will be purity of thought, that being exactly who you are will be enough.

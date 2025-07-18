@@ -2,7 +2,7 @@
 title: '[LeetCode] 2. Add Two Numbers'
 pubDate: 2018-07-03 21:05:00
 categories: ["解题报告"]
-tags: 
+tags:
 - 解题报告
 - LeetCode
 - Python
@@ -27,16 +27,11 @@ Output: 7 -> 0 -> 8
 Explanation: 342 + 465 = 807.
 ```
 
-
-
-
 ## 解题报告
 
 ### 思路
 
 这题算是一个高精度加法的简化版本。简单来说，这个加法其实和列竖式的想法是一致的：先把两边的数字加起来，如果进位了就把进位写上。
-
-
 
 ### 方法一：暴力相加
 
@@ -58,34 +53,32 @@ class Solution:
         :type l2: ListNode
         :rtype: ListNode
         """
-        root = ListNode((l1.val + l2.val) % 10) 
+        root = ListNode((l1.val + l2.val) % 10)
         s = (l1.val + l2.val) // 10
         node = root
-        
+
         while l1.next and l2.next :
             l1 = l1.next
             l2 = l2.next
-            node.next = ListNode((l1.val + l2.val + s) % 10) 
+            node.next = ListNode((l1.val + l2.val + s) % 10)
             s = (l1.val + l2.val + s) // 10
             node = node.next
-            
+
         while l1.next:
-            node.next = ListNode((l1.val + s) % 10) 
+            node.next = ListNode((l1.val + s) % 10)
             s = (l1.val + s) // 10
             node = node.next
-            
+
         while l2.next:
-            node.next = ListNode((l2.val + s) % 10) 
+            node.next = ListNode((l2.val + s) % 10)
             s = (l2.val + s) // 10
             node = node.next
-        
+
         if s:
             node.next = ListNode(s)
-            
+
         return root
 ```
-
-
 
 ### 方法二：合并循环
 
@@ -105,7 +98,7 @@ class Solution:
         :type l2: ListNode
         :rtype: ListNode
         """
-        root = ListNode(0) 
+        root = ListNode(0)
         node = root
         c = 0
         while l1 or l2 or c:
@@ -118,11 +111,9 @@ class Solution:
             node.next = ListNode(c % 10)
             c = c // 10
             node = node.next
-                
+
         return root.next
 ```
-
-
 
 ## 结语
 

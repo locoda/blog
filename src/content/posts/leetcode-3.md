@@ -2,7 +2,7 @@
 title: '[LeetCode] 3. Longest Substring Without Repeating Characters'
 pubDate: 2018-07-03 22:00:00
 categories: ["解题报告"]
-tags: 
+tags:
 - 解题报告
 - LeetCode
 - Python
@@ -24,16 +24,11 @@ Given `"bbbbb"`, the answer is `"b"`, with the length of 1.
 
 Given `"pwwkew"`, the answer is `"wke"`, with the length of 3. Note that the answer must be a **substring**, `"pwke"` is a *subsequence*and not a substring.
 
-
-
-
 ## 解题报告
 
 ### 思路
 
 乍一想可能是动态规划的一道题，实际上可以化简为贪心。
-
-
 
 ### 方法：滑动窗口找最大
 
@@ -60,11 +55,9 @@ class Solution:
             else:
                 result = max(result, index - curr_start + 1)
             used[char] = index
-                
+
         return result
 ```
-
-
 
 ## 结语
 

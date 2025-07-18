@@ -2,16 +2,12 @@
 title: 从零开始微信机器人（三）：表情机器人的制作
 pubDate: 2017-06-25
 categories: ["知识课堂"]
-tags: 
+tags:
 - Python
 - 聊天机器人
 ---
 
-
-
 本篇的诞生来自于一朋友制作的表情机器人。当时觉得十分有趣，也希望加入到群聊机器人中，因此就向他讨要了[源代码](https://github.com/qwIvan/microMsg-bot)并制作了表情功能。在此我也再次感谢[吴毅凡](https://github.com/qwIvan)同学的协助！
-
-
 
 ## 准备工作
 
@@ -26,7 +22,6 @@ pip install lxml
 ```shell
 pip install beautifulsoup4
 ```
-
 
 ## 使用斗图啦搜索表情
 
@@ -49,8 +44,6 @@ url = 'http:' + random.choice(html.xpath('//div[@class="image-container"][1]//im
 
 Chrome的审查元素功能可以帮助你快速判断自己编写的xpath能否准确选出你想要的元素，也能够查看元素本身。
 
-
-
 ## 储存图片
 
 因为wxpy自动将gif文件判断作为表情发送，我们可以利用这一点把表情作为表情（而非图片）发送到聊天中。
@@ -69,8 +62,6 @@ tmp = NamedTemporaryFile()
 tmp.write(res.content)
 tmp.flush()
 ```
-
-
 
 ## 上传图片并作为表情发送
 

@@ -2,18 +2,14 @@
 title: 从零开始微信机器人（二）：使用图灵机器人和api.ai相关接口
 pubDate: 2017-06-24
 categories: ["知识课堂"]
-tags: 
+tags:
 - Python
 - 聊天机器人
 ---
 
-
-
 # 图灵机器人相关接口
 
 图灵机器人是一个中文语境下的对话机器人，免费的机器人每天有5000次调用的，如果放在群聊中是完全够用的（如果只有@的消息才使用机器人回复的）。图灵机器人也包括一些简单的能力，比如讲笑话、故事大全、成语接龙、新闻资讯等，我们将介绍如何简单调用图灵机器人接口。
-
-
 
 ## 前期准备
 
@@ -31,8 +27,6 @@ tags:
    ```python
    import requests
    ```
-
-
 
 ## 调用接口
 
@@ -65,6 +59,7 @@ data = {
     'info'   : msg.text, # 收到消息的文字内容
 }
 ```
+
 根据文档，通过HTTP请求，我们将会得到一个json格式的文件。使用Requests包，我们可以简单的获得调用接口所返回的信息：
 
 ```python
@@ -77,8 +72,8 @@ print s # 打印所获得的json查看如何使用
 
 ```python
 if s['code'] == 100000:
-		print s['text'] # 查看回复消息的内容，可省略
-		msg.reply(s['text']) # 回复消息
+  print s['text'] # 查看回复消息的内容，可省略
+  msg.reply(s['text']) # 回复消息
 ```
 
 如果需要回复其他类型的消息，也完全可以通过判断code确定消息类型，再决定如何回复。这里给出我的回复方法供大家参考（也可以选择不处理这一类内容）：
@@ -101,25 +96,24 @@ bot = Bot()
 
 @bot.register(Group, TEXT) # 这里注册了群聊中的文字消息，测试时可以设置为自己(上篇中提到过)
 def group_msg(msg):
-	if msg.is_at:
-		url_api = 'http://www.tuling123.com/openapi/api'
-		data = {
-		    'key'    : TULING_TOKEN,
-		    'info'   : msg.text, # 收到消息的文字内容
-		}
+ if msg.is_at:
+  url_api = 'http://www.tuling123.com/openapi/api'
+  data = {
+      'key'    : TULING_TOKEN,
+      'info'   : msg.text, # 收到消息的文字内容
+  }
 
-		s = requests.post(url_api, data=data).json()
-		print s # 打印所获得的json查看如何使用
+  s = requests.post(url_api, data=data).json()
+  print s # 打印所获得的json查看如何使用
 
-		if s['code'] == 100000:
-			print s['text'] # 查看回复消息的内容，可省略
-			msg.reply(s['text']) # 回复消息
-        
+  if s['code'] == 100000:
+   print s['text'] # 查看回复消息的内容，可省略
+   msg.reply(s['text']) # 回复消息
+
 embed()
 ```
+
 以下内容更加进阶，而文末有一些简单问题的解答。如果遇到其他问题，我也会在之后更新。
-
-
 
 ## 番外：使用上下文
 
@@ -138,9 +132,8 @@ data = {
     'userid' : msg.member.puid, # 使用群聊中发送者的 puid 作为 userid 传送给图灵接口， 如果是私聊可以使用 msg.sender.puid
 }
 ```
+
 这样做的好处是，图灵机器人可以根据得userid来获取上下文信息。例如你询问『天气』，它会回复『亲爱的，悄悄地告诉我你在哪个城市？』。在这种情况下，如果你不使用userid参数，你再次回复城市，图灵机器人也无法正确找到天气；如果你使用了这一参数，且两次回复使用的userid相同，图灵机器人会为你回复你回复的城市的天气情况，完成这一对话。
-
-
 
 # 使用api.ai
 
@@ -149,8 +142,6 @@ api.ai是一家被谷歌收购的人机交互系统，主要着重于对话机�
 如果你的英语相对糟糕，我不建议使用api.ai。api.ai的配置大多需要使用英语，虽然接口简单，但是后台设置相对复杂，如果没有英文背景不推荐使用。
 
 这一部分内容相对进阶，如果没有特殊需要，完全可以跳过不看。这里只作一个对api.ai使用方式上大体的介绍，希望能帮助大家了解这一网站。
-
-
 
 ## 前期准备
 
@@ -167,8 +158,6 @@ api.ai是一家被谷歌收购的人机交互系统，主要着重于对话机�
    ```python
    import json
    ```
-
-
 
 ## 调用接口
 
@@ -200,13 +189,11 @@ print s
 我们发现，api.ai传回的json相对于图灵机器人更加复杂。参考[api.ai的query文档](https://docs.api.ai/docs/query)，我对对这部分回复进行了如下处理：
 
 ```python
-if s['result']['action'] == 'input.unknown': # 
+if s['result']['action'] == 'input.unknown': #
     raise Exception('api.ai cannot reply this message') # 抛出异常：使用 try 语句捕捉后使用图灵机器人回复
 if s['status']['code'] == 200:
     msg.reply(s['result']['fulfillment']['speech']) # 回复 api.ai 返回的内容
 ```
-
-
 
 ## api.ai的设置和调试
 
@@ -228,8 +215,6 @@ api.ai自带机器学习功能，它的参数可以在机器人设置中的ML se
 import logging
 logging.basicConfig()
 ```
-
-
 
 ## 消息处理：删除@内容
 

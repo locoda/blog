@@ -2,7 +2,7 @@
 title: 猴子都能学会的20行代码登录微博
 pubDate: 2017-07-14
 categories: ["知识课堂"]
-tags: 
+tags:
 - Python
 - 爬虫
 ---
@@ -10,8 +10,6 @@ tags:
 如何登录新浪微博是令许多数据新手（包括我）头疼的大问题。由于新浪的反爬虫策略，网上的教程往往撑不过几个月，查阅到的资料在半年前或是一年前——而它们早就无法使用了，在你想开始爬虫的时候被活生生卡在了第一步。
 
 简单而言，我使用的方法是通过 Selenium 模拟浏览器的行为，直接在浏览器中输入用户名和密码并登录，然后直接从浏览器中获取 Cookies。虽然听起来十分简单（实际上也十分简单），但是确实是十分有效的方式。只要一个网站能通过浏览器登陆，我们就可以简单改造这个程序来登录并获得想要的资料。
-
-
 
 # 什么是Selenium？如何使用？
 
@@ -25,7 +23,6 @@ pip3 install selenium  # 如果你使用 Python 2 ，请使用 pip install selen
 
 仅仅安装 Selenium 本身是不够的，你同时还需要安装 Driver 。你可以将 Driver 理解为浏览器本身的『驱动』，在程序中使用 Driver 就相当于你打开了一个浏览器做了些什么事情。
 
-
 在这里我们推荐几个 Driver ：
 
 1. Firefox: https://github.com/mozilla/geckodriver/releases
@@ -37,8 +34,6 @@ pip3 install selenium  # 如果你使用 Python 2 ，请使用 pip install selen
 下载后，我建议将可执行文件加入环境中，以备使用。
 
 Firefox 和 Chrome 相信大家都比较熟悉。PhantomJS 是一个可以让你无需浏览器就进行网页相关操作的[WebKit](https://zh.wikipedia.org/wiki/WebKit)，它也没有图形界面。个人比较推荐在调试程序期间使用 Firefox 或是 Chrome ，这样你可以通过观察发现自己哪里出了错。在调试完成后使用 PhantomJS ，来避免多余的可视化渲染。
-
-
 
 # 创建一个 WebDriver
 
@@ -58,8 +53,6 @@ driver = webdriver.Firefox(executable_path="/path/to/geckodriver")
 
 如果你使用 Firefox 或 Chrome，你会看到这个操作打开一个浏览器。
 
-
-
 # 观察网页本身
 
 为了方便演示，我们使用新浪的移动版进行登录。如果想决定如何操作一个网页，首先我们要观察网页本身。
@@ -70,8 +63,6 @@ driver = webdriver.Firefox(executable_path="/path/to/geckodriver")
 
 1. 输入用户名和密码
 2. 点击登录按钮（或摁回车）
-
-
 
 # 利用 Selenium 进行登录操作
 
@@ -159,11 +150,9 @@ from selenium.webdriver.support import expected_conditions as EC
 
 # 在获取网页后
 WebDriverWait(driver, 20).until(
-    EC.presence_of_element_located((By.ID, 'loginName'))) 
+    EC.presence_of_element_located((By.ID, 'loginName')))
 # 等待 id 为 loginName的元素出现，最多20秒
 ```
-
-
 
 # 结语
 
@@ -195,4 +184,3 @@ submit_button.click()
 
 print(driver.get_cookies())
 ```
-
