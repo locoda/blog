@@ -26,6 +26,9 @@ importers:
       '@swup/astro':
         specifier: ^1.6.0
         version: 1.6.0(@types/babel__core@7.20.5)
+      '@unocss/preset-wind3':
+        specifier: ^66.3.3
+        version: 66.3.3
       astro:
         specifier: ^5.11.2
         version: 5.11.2(@types/node@24.0.14)(jiti@2.4.2)(rollup@2.79.2)(terser@5.43.1)(tsx@4.19.1)(typescript@5.8.3)(yaml@2.8.0)
@@ -70,6 +73,9 @@ importers:
         specifier: ^66.3.3
         version: 66.3.3(eslint@9.31.0(jiti@2.4.2))(typescript@5.8.3)
       '@unocss/preset-attributify':
+        specifier: ^66.3.3
+        version: 66.3.3
+      '@unocss/preset-web-fonts':
         specifier: ^66.3.3
         version: 66.3.3
       '@unocss/reset':

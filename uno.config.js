@@ -4,7 +4,8 @@ import {
   defineConfig,
   presetIcons,
   presetTypography,
-  presetUno,
+  presetWebFonts,
+  presetWind3,
   transformerVariantGroup,
 } from 'unocss'
 import presetTheme from 'unocss-preset-theme'
@@ -54,7 +55,16 @@ export default defineConfig({
     ],
   ],
   presets: [
-    presetUno(),
+    presetWind3(),
+    presetWebFonts({
+      provider: 'google',
+      fonts: {
+        sans: 'Noto Sans Simplified Chinese',
+        self: 'Noto Serif Simplified Chinese',
+        mono: ['Fira Code', 'Fira Mono:400,700'],
+      },
+    }),
+
     presetTypography({ cssExtend }),
     presetAttributify(),
     presetIcons({ scale: 1.2, warn: true }),
