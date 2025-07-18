@@ -1,7 +1,5 @@
-import antfu from '@antfu/eslint-config'
+import js from "@eslint/js";
 
-export default antfu({
-  formatters: true,
-  unocss: true,
-  astro: true,
-})
+export default [
+  js.configs.recommended,
+];
