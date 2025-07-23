@@ -35,7 +35,7 @@
     "vite": "^7.0.5"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^4.17.0",
+    "@antfu/eslint-config": "^4.18.0",
     "@iconify-json/mdi": "^1.2.3",
     "@types/markdown-it": "^14.1.2",
     "@types/node": "^24.1.0",
