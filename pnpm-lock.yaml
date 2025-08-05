@@ -91,8 +91,8 @@ importers:
         specifier: ^66.4.1
         version: 66.4.1
       '@unocss/transformer-directives':
-        specifier: ^66.3.3
-        version: 66.3.3
+        specifier: ^66.4.1
+        version: 66.4.1
       astro-eslint-parser:
         specifier: ^1.2.2
         version: 1.2.2
@@ -1844,9 +1844,6 @@ packages:
   '@unocss/core@0.63.6':
     resolution: {integrity: sha512-Q4QPgJ271Up89+vIqqOKgtdCKkFpHqvHN8W1LUlKPqtYnOvVYaOIVNAZowaIdEhPuc83yLc6Tg2+7riK18QKEw==}
 
-  '@unocss/core@66.3.3':
-    resolution: {integrity: sha512-6WFLd92TJelVQARtCGaF+EgEoHKIVe43gkGXVoWILu0HUDRWdhv+cpcyX0RTJV22Y976AxeneU7/zmhAh+CXNg==}
-
   '@unocss/core@66.4.1':
     resolution: {integrity: sha512-2QMthvEmH0215zqIIL5WCodQ9lYShYDzziF4N1MMdcoRvCumGq9MMBFPxC54gNDrO3+/Olhp++YYmXkdZ89qrA==}
 
@@ -1903,10 +1900,6 @@ packages:
     resolution: {integrity: sha512-moeDEq5d9mB8gSYeoqHMkXWWekaFFdhg7QCuwwCbxCc+NPMOgGkmfAoafz+y2tdvK7pEuT191RWOiHQ0MkA5oQ==}
     engines: {node: '>=14'}
 
-  '@unocss/rule-utils@66.3.3':
-    resolution: {integrity: sha512-QKgVGV5nRRnK44/reUKFLAc5UGyl98vz3hrfk8JI8pVza58vmQWTdAB2rIpNJ5a5j+EkWfDOUlGQaOrIeYGLdg==}
-    engines: {node: '>=14'}
-
   '@unocss/rule-utils@66.4.1':
     resolution: {integrity: sha512-iYbx4ab3aTMrcJSyBoGvwsbUM5BmRQef4rzGOjL312r/0RDZM+i2ikPxcFXpp/9P+Gp22gSXDMlzwY+VfJ2Llw==}
     engines: {node: '>=14'}
@@ -1916,9 +1909,6 @@ packages:
 
   '@unocss/transformer-compile-class@66.4.1':
     resolution: {integrity: sha512-xf6W+zLbFwOvlNNxV0S73ggevlmiBhqtWBI4xdd463IdiJJ1VU/hTmXJ0r39hVHwVEPYGtechUODGtky47M59Q==}
-
-  '@unocss/transformer-directives@66.3.3':
-    resolution: {integrity: sha512-11T7fmYk/XZcqFDn4qiIvs04mJhUtAoha5Y99bVE+L3byWa6BT4jb5aSAKk+24q5aynwgB++4RgfQxarj69WTw==}
 
   '@unocss/transformer-directives@66.4.1':
     resolution: {integrity: sha512-3PiYgq0/TYeCLoUm6K+XbsHcd03l3TN2U2fSeda4PIZoZ/ioH0kJd0tVg98DzO8ekgqtUwKFZjgBa0ezQJwfPQ==}
@@ -7643,8 +7633,6 @@ snapshots:
 
   '@unocss/core@0.63.6': {}
 
-  '@unocss/core@66.3.3': {}
-
   '@unocss/core@66.4.1': {}
 
   '@unocss/eslint-plugin@66.4.1(eslint@9.32.0(jiti@2.5.1))(typescript@5.9.2)':
@@ -7744,11 +7732,6 @@ snapshots:
       '@unocss/core': 0.63.6
       magic-string: 0.30.17
 
-  '@unocss/rule-utils@66.3.3':
-    dependencies:
-      '@unocss/core': 66.3.3
-      magic-string: 0.30.17
-
   '@unocss/rule-utils@66.4.1':
     dependencies:
       '@unocss/core': 66.4.1
@@ -7765,12 +7748,6 @@ snapshots:
   '@unocss/transformer-compile-class@66.4.1':
     dependencies:
       '@unocss/core': 66.4.1
-
-  '@unocss/transformer-directives@66.3.3':
-    dependencies:
-      '@unocss/core': 66.3.3
-      '@unocss/rule-utils': 66.3.3
-      css-tree: 3.1.0
 
   '@unocss/transformer-directives@66.4.1':
     dependencies:
