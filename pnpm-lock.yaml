@@ -82,8 +82,8 @@ importers:
         specifier: ^66.3.3
         version: 66.3.3(eslint@9.32.0(jiti@2.5.1))(typescript@5.8.3)
       '@unocss/preset-attributify':
-        specifier: ^66.3.3
-        version: 66.3.3
+        specifier: ^66.4.1
+        version: 66.4.1
       '@unocss/preset-web-fonts':
         specifier: ^66.4.1
         version: 66.4.1
@@ -1894,6 +1894,9 @@ packages:
 
   '@unocss/preset-attributify@66.3.3':
     resolution: {integrity: sha512-22+0Cqqu09q+xHfZ3Wk8Coxe5m6PmpgWz4U5xrEC8056UfG3Q1KEqoCxy2wySJIq8SqxQ30Nlll7oMa31B8Krw==}
+
+  '@unocss/preset-attributify@66.4.1':
+    resolution: {integrity: sha512-HTJd/4bEie6EsCwqq9hK+GJwoFp0rx6k3GTz9jHXMwhGpUGYPrrccw8cazYmJq7lMHnPbh/spxHH24eTISwojg==}
 
   '@unocss/preset-icons@66.3.3':
     resolution: {integrity: sha512-Bmhiev05BN/horlgnyZ8gzQWZKd7oVpUBWD66X7U/dgkLdO6B5GIIsdO5Fi7JLeMDmyXm6vlYk0YQhiTbx8l9w==}
@@ -7784,6 +7787,10 @@ snapshots:
   '@unocss/preset-attributify@66.3.3':
     dependencies:
       '@unocss/core': 66.3.3
+
+  '@unocss/preset-attributify@66.4.1':
+    dependencies:
+      '@unocss/core': 66.4.1
 
   '@unocss/preset-icons@66.3.3':
     dependencies:
