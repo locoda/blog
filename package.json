@@ -31,7 +31,7 @@
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
     "typescript": "~5.9.2",
-    "typescript-eslint": "^8.39.0",
+    "typescript-eslint": "^8.40.0",
     "vite": "^7.1.0"
   },
   "devDependencies": {
