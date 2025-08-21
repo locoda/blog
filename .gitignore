@@ -2,3 +2,4 @@ node_modules
 db.json
 dist
 .astro
+package-lock.json
