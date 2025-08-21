@@ -31,6 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 代码块被添加背景色的问题。
 - 修复主题副标题错误取值的问题
 - 防止 Safari 中 main 元素自动获得焦点
+- 在缺少分析配置时防止错误
 
 ### Chore
 - 使用 ESLint 格式化代码。
