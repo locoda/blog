@@ -20,7 +20,7 @@ export interface ThemeConfig {
   seo: ConfigSEO
   comment: Partial<ConfigComment>
   rss: ConfigRSS
-  analytics: ConfigAnalytics
+  analytics: Partial<ConfigAnalytics>
   latex: ConfigLaTeX
 }
 
