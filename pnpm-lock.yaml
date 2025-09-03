@@ -91,8 +91,8 @@ importers:
         specifier: ^66.4.1
         version: 66.4.1
       '@unocss/transformer-directives':
-        specifier: ^66.4.1
-        version: 66.4.1
+        specifier: ^66.5.0
+        version: 66.5.0
       astro-eslint-parser:
         specifier: ^1.2.2
         version: 1.2.2
@@ -2162,9 +2162,6 @@ packages:
 
   '@unocss/transformer-compile-class@66.5.0':
     resolution: {integrity: sha512-Mpi9PP/KZGw1DkNCr40LjgfCzzA8jHOcBfMqVOopUaRSLMLEtgBRKb8anJzoR//owrzJl8EyBBTWl30fTAdpCA==}
-
-  '@unocss/transformer-directives@66.4.1':
-    resolution: {integrity: sha512-3PiYgq0/TYeCLoUm6K+XbsHcd03l3TN2U2fSeda4PIZoZ/ioH0kJd0tVg98DzO8ekgqtUwKFZjgBa0ezQJwfPQ==}
 
   '@unocss/transformer-directives@66.5.0':
     resolution: {integrity: sha512-nZSi+nfaXL6aXoE7Lzw+qz9I9EHnIjkw9oE0Pu/6WmlJ7gjf+HWiyDaB90fi/Zn8M1VaKYXUCepJQ4ptqy4pjA==}
@@ -8270,7 +8267,7 @@ snapshots:
 
   '@unocss/rule-utils@66.4.1':
     dependencies:
-      '@unocss/core': 66.5.0
+      '@unocss/core': 66.4.1
       magic-string: 0.30.17
 
   '@unocss/rule-utils@66.5.0':
@@ -8289,12 +8286,6 @@ snapshots:
   '@unocss/transformer-compile-class@66.5.0':
     dependencies:
       '@unocss/core': 66.5.0
-
-  '@unocss/transformer-directives@66.4.1':
-    dependencies:
-      '@unocss/core': 66.4.1
-      '@unocss/rule-utils': 66.4.1
-      css-tree: 3.1.0
 
   '@unocss/transformer-directives@66.5.0':
     dependencies:
