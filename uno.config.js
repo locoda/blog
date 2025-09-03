@@ -14,7 +14,9 @@ const { colorsDark, colorsLight, fonts } = themeConfig.appearance
 
 const cssExtend = {
   ':root': {
-    '--prose-borders': '#eee',
+    '--un-prose-borders': '#eee',
+    '--un-prose-body': 'var(--uno-colors-primary)',
+    '--un-prose-invert-body': 'var(--uno-colors-primary)',
   },
 
   'code::before,code::after': {
