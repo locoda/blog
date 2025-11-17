@@ -24,7 +24,7 @@
     "@swup/astro": "^1.7.0",
     "@unocss/astro": "^66.5.5",
     "@unocss/preset-wind3": "^66.5.5",
-    "astro": "^5.15.4",
+    "astro": "^5.15.6",
     "astro-robots-txt": "^1.0.0",
     "astro-seo": "^0.8.4",
     "giscus": "^1.6.0",
