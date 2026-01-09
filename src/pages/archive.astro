@@ -23,7 +23,7 @@ function getYearMap(posts: Post[]) {
     {
       yearMap.map(([year, posts]) => (
         <section flex="~ col gap-7.5">
-          <h2 class="post-title font-header">{year}</h2>
+          <h2 class="post-title">{year}</h2>
           <ul class="pl-6" flex="~ col gap-4">
             {posts.map((post) => (
               <li>
