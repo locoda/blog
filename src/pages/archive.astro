@@ -1,10 +1,7 @@
 ---
 import LayoutDefault from '~/layouts/LayoutDefault.astro'
-import PostCategory from '~/components/PostCategory.astro'
 import type { Post } from '~/types'
-import { formatDate, getPostDescription, getPosts } from '~/utils'
-
-const { translate: t } = Astro.locals
+import { getPosts } from '~/utils'
 const posts = await getPosts(true)
 
 const yearMap = getYearMap(posts)
@@ -27,30 +24,15 @@ function getYearMap(posts: Post[]) {
       yearMap.map(([year, posts]) => (
         <section flex="~ col gap-7.5">
           <h2 class="post-title">{year}</h2>
-          <div flex="~ col gap-7.5">
-            {posts.map((post) => {
-              const categoryList = post.data.categories ?? []
-              return (
-                <article
-                  class="prose max-w-none prose-headings:font-header prose-headings:font-bold prose-headings:c-primary prose-a:c-primary"
-                >
-                  <header flex="~ col gap-2">
-                    <h3 class="post-title">
-                      <a class="not-prose" href={`/posts/${post.id}/`}>{post.data.title}</a>
-                    </h3>
-                    <div class="text-3.5">
-                      <span>{t(post.data.modDate ? 'updated_at' : 'posted_at')}</span>
-                      <time>{formatDate(post.data.modDate ?? post.data.pubDate)}</time>
-                      {categoryList.map((category) => (
-                        <PostCategory category={category} />
-                      ))}
-                    </div>
-                  </header>
-                  <p class="line-clamp-4">{getPostDescription(post)}</p>
-                </article>
-              )
-            })}
-          </div>
+          <ul class="pl-6" flex="~ col gap-4">
+            {posts.map((post) => (
+              <li>
+                <h3 class="post-title">
+                  <a href={`/posts/${post.id}/`}>{post.data.title}</a>
+                </h3>
+              </li>
+            ))}
+          </ul>
         </section>
       ))
     }
