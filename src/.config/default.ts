@@ -67,7 +67,7 @@ export const defaultConfig: ThemeConfig = {
     },
     fonts: {
       header:
-        '"Source Han Serif CN","Source Han Serif SC","Source Han Serif TC",serif',
+        '"Source Han Serif CN","Source Han Serif SC","Source Han Serif TC","Songti SC","Songti TC","STSong",serif',
       ui: '"Helvetica","Helvetica Neue","Source Sans Pro","Roboto","Source Han Sans SC","Source Han Sans TC","PingFang SC","PingFang HK","PingFang TC",sans-serif',
     },
   },
