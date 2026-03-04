@@ -52,7 +52,7 @@
     "dayjs": "^1.11.19",
     "eslint": "^9.39.2",
     "eslint-plugin-astro": "^1.6.0",
-    "eslint-plugin-format": "^1.4.0",
+    "eslint-plugin-format": "^2.0.1",
     "esno": "^4.8.0",
     "lint-staged": "^16.3.2",
     "markdown-it": "^14.1.1",
