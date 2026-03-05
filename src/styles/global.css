@@ -4,7 +4,13 @@
   --uno-colors-primary: theme('colors.primary');
   --uno-colors-background: theme('colors.background');
   --uno-fonts-ui: theme('fontFamily.ui');
+  --uno-fonts-header: theme('fontFamily.header');
   --uno-colors-shadow: theme('colors.shadow');
+}
+
+
+.font-header {
+  font-family: var(--uno-fonts-header);
 }
 html {
   --at-apply: antialiased;
