@@ -27,7 +27,7 @@ function getYearMap(posts: Post[]) {
           <ul class="pl-6" flex="~ col gap-4">
             {posts.map((post) => (
               <li>
-                <h3 class="post-title font-header">
+                <h3 class="post-title">
                   <a href={`/posts/${post.id}/`}>{post.data.title}</a>
                 </h3>
               </li>
