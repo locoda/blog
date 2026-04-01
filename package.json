@@ -50,7 +50,7 @@
     "changelogen": "^0.6.2",
     "consola": "^3.4.2",
     "dayjs": "^1.11.20",
-    "eslint": "^9.39.2",
+    "eslint": "^10.1.0",
     "eslint-plugin-astro": "^1.6.0",
     "eslint-plugin-format": "^2.0.1",
     "esno": "^4.8.0",
