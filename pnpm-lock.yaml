@@ -5502,8 +5502,8 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
-  serialize-javascript@4.0.0:
-    resolution: {integrity: sha512-GaNA54380uFefWghODBWEGisLZFj00nS5ACs6yHa9nLqlLpVLO8ChDGeKRjZnV4Nh4n0Qi7nhYZD/9fCPzEqkw==}
+  serialize-javascript@6.0.2:
+    resolution: {integrity: sha512-Saa1xPByTTq2gdeFZYLLo+RFE35NHZkAbqZeWNd3BpzppeVisAqpDjcp8dyf6uIvEqJRd46jemmyA4iFIeVk8g==}
 
   set-function-length@1.2.2:
     resolution: {integrity: sha512-pgRc4hJ4/sNjWCSS9AmnS40x3bNMDTknHgL5UaMBTMyJnU90EgWh1Rz+MC9eFu4BuN/UwZjKQuY/1v3rM7HMfg==}
@@ -6106,7 +6106,7 @@ packages:
       sugarss: ^5.0.0
       terser: ^5.16.0
       tsx: ^4.8.1
-      yaml: ^2.4.2
+      yaml: 2.8.3
     peerDependenciesMeta:
       '@types/node':
         optional: true
@@ -6147,7 +6147,7 @@ packages:
       sugarss: ^5.0.0
       terser: ^5.16.0
       tsx: ^4.8.1
-      yaml: ^2.4.2
+      yaml: 2.8.3
     peerDependenciesMeta:
       '@types/node':
         optional: true
@@ -6351,10 +6351,6 @@ packages:
   yaml-language-server@1.20.0:
     resolution: {integrity: sha512-qhjK/bzSRZ6HtTvgeFvjNPJGWdZ0+x5NREV/9XZWFjIGezew2b4r5JPy66IfOhd5OA7KeFwk1JfmEbnTvev0cA==}
     hasBin: true
-
-  yaml@1.10.3:
-    resolution: {integrity: sha512-vIYeF1u3CjlhAFekPPAk2h/Kv4T3mAkMox5OymRiJQB0spDP10LHvt+K7G9Ny6NuuMAb25/6n1qyUjAcGNf/AA==}
-    engines: {node: '>= 6'}
 
   yaml@2.8.3:
     resolution: {integrity: sha512-AvbaCLOO2Otw/lW5bmh9d/WEdcDFdQp2Z2ZUH3pX9U2ihyUY0nvLv7J6TrWowklRGPYbB/IuIMfYgxaCPg5Bpg==}
@@ -8522,8 +8518,8 @@ snapshots:
 
   '@typescript-eslint/project-service@8.56.1(typescript@5.9.3)':
     dependencies:
-      '@typescript-eslint/tsconfig-utils': 8.58.0(typescript@5.9.3)
-      '@typescript-eslint/types': 8.58.0
+      '@typescript-eslint/tsconfig-utils': 8.56.1(typescript@5.9.3)
+      '@typescript-eslint/types': 8.56.1
       debug: 4.4.3
       typescript: 5.9.3
     transitivePeerDependencies:
@@ -9490,7 +9486,7 @@ snapshots:
       import-fresh: 3.3.1
       parse-json: 5.2.0
       path-type: 4.0.0
-      yaml: 1.10.3
+      yaml: 2.8.3
 
   cross-spawn@7.0.6:
     dependencies:
@@ -9583,7 +9579,7 @@ snapshots:
       cssnano-preset-default: 5.2.14(postcss@8.5.8)
       lilconfig: 2.1.0
       postcss: 8.5.8
-      yaml: 1.10.3
+      yaml: 2.8.3
 
   csso@4.2.0:
     dependencies:
@@ -12156,7 +12152,7 @@ snapshots:
   postcss-load-config@3.1.4(postcss@8.5.8):
     dependencies:
       lilconfig: 2.1.0
-      yaml: 1.10.3
+      yaml: 2.8.3
     optionalDependencies:
       postcss: 8.5.8
 
@@ -12688,7 +12684,7 @@ snapshots:
       '@babel/code-frame': 7.29.0
       jest-worker: 26.6.2
       rollup: 2.80.0
-      serialize-javascript: 4.0.0
+      serialize-javascript: 6.0.2
       terser: 5.46.0
 
   rollup-plugin-typescript2@0.32.1(rollup@2.80.0)(typescript@4.9.5):
@@ -12815,7 +12811,7 @@ snapshots:
 
   semver@7.7.4: {}
 
-  serialize-javascript@4.0.0:
+  serialize-javascript@6.0.2:
     dependencies:
       randombytes: 2.1.0
 
@@ -13721,8 +13717,6 @@ snapshots:
       vscode-languageserver-types: 3.17.5
       vscode-uri: 3.1.0
       yaml: 2.8.3
-
-  yaml@1.10.3: {}
 
   yaml@2.8.3: {}
 
