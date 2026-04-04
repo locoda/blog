@@ -1,6 +1,6 @@
 ---
 import type { Post } from '~/types'
-import { formatDate } from '~/utils'
+import { formatDate, getPostUrl } from '~/utils'
 import PostCategory from './PostCategory.astro'
 
 interface Props {
@@ -13,17 +13,30 @@ const { post, headingTag = 'h1', linkTitle = true } = Astro.props
 const { translate: t } = Astro.locals
 
 const categoryList = post.data.categories ?? []
-const HeadingTag = headingTag
 ---
 
 <header flex="~ col gap-2">
-  <HeadingTag class="post-title">
-    {
-      linkTitle
-        ? <a class="not-prose" href={`/posts/${post.id}/`}>{post.data.title}</a>
-        : <span class="not-prose">{post.data.title}</span>
-    }
-  </HeadingTag>
+  {
+    headingTag === 'h1'
+      ? (
+          <h1 class="post-title">
+            {
+              linkTitle
+                ? <a class="not-prose" href={getPostUrl(post.id)}>{post.data.title}</a>
+                : <span class="not-prose">{post.data.title}</span>
+            }
+          </h1>
+        )
+      : (
+          <h2 class="post-title">
+            {
+              linkTitle
+                ? <a class="not-prose" href={getPostUrl(post.id)}>{post.data.title}</a>
+                : <span class="not-prose">{post.data.title}</span>
+            }
+          </h2>
+        )
+  }
   <p class="text-3.5">
     <span>{t(post.data.modDate ? 'updated_at' : 'posted_at')}</span>
     <time>{formatDate(post.data.modDate ?? post.data.pubDate)}</time>
