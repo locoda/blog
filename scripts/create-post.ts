@@ -4,37 +4,60 @@ import path from 'node:path'
 import consola from 'consola'
 import dayjs from 'dayjs'
 
+const POSTS_DIR = './src/content/posts/'
+const FILE_EXTENSIONS = ['.md', '.mdx'] as const
+const SINGLE_QUOTE_RE = /'/g
+const ESCAPED_SINGLE_QUOTE = '\\\''
+const TEMPLATE_BODY = 'Write your prose here.'
+
 createPost()
 
 /**
  * Create a new post.
- * Prompts the user for a file name and extension, and creates a new post file with frontmatter.
- * If successful, opens the new post file in the default editor.
+ * Prompts for file metadata and creates a clean post template.
  */
 async function createPost(): Promise<void> {
   consola.start('Ready to create a new post!')
 
-  const filename: string = await consola.prompt('Enter file name: ', { type: 'text' })
-  const extension: string = await consola.prompt('Select file extension: ', { type: 'select', options: ['.md', '.mdx'] })
-  const isDraft: boolean = await consola.prompt('Is this a draft?', { type: 'confirm', initial: true })
+  const filename = (await consola.prompt('Enter file name: ', { type: 'text' })).trim()
+  if (!filename) {
+    consola.error('File name cannot be empty.')
+    return
+  }
 
-  const targetDir = './src/content/posts/'
-  const fullPath: string = path.join(targetDir, `${filename}${extension}`)
+  const titleInput = await consola.prompt('Enter post title: ', { type: 'text', initial: filename })
+  const title = titleInput.trim()
+  if (!title) {
+    consola.error('Title cannot be empty.')
+    return
+  }
 
-  const frontmatter = getFrontmatter({
-    title: filename,
+  const extension = await consola.prompt('Select file extension: ', {
+    type: 'select',
+    options: [...FILE_EXTENSIONS],
+  })
+  const isDraft = await consola.prompt('Is this a draft?', { type: 'confirm', initial: true })
+
+  const fullPath = path.join(POSTS_DIR, `${filename}${extension}`)
+  if (fs.existsSync(fullPath)) {
+    consola.error(`File already exists: ${fullPath}`)
+    return
+  }
+
+  const template = getPostTemplate({
+    title,
     pubDate: dayjs().format('YYYY-MM-DD'),
-    categories: '[]',
-    description: '\'\'',
-    slug: filename.toLowerCase().replace(/\s+/g, '-'),
-    draft: isDraft ? 'true' : 'false',
+    categories: [],
+    draft: isDraft,
+    description: '',
   })
 
   try {
-    fs.writeFileSync(fullPath, frontmatter)
+    fs.mkdirSync(path.dirname(fullPath), { recursive: true })
+    fs.writeFileSync(fullPath, template)
     consola.success('New post created successfully!')
 
-    const open: boolean = await consola.prompt('Open the new post?', { type: 'confirm', initial: true })
+    const open = await consola.prompt('Open the new post?', { type: 'confirm', initial: true })
     if (open) {
       consola.info(`Opening ${fullPath}...`)
       execSync(`code "${fullPath}"`)
@@ -45,15 +68,34 @@ async function createPost(): Promise<void> {
   }
 }
 
-/**
- * Create frontmatter from a data object.
- * @param data The data object to convert to frontmatter.
- * @returns The frontmatter as a string.
- */
-function getFrontmatter(data: { [key: string]: string }): string {
-  const frontmatter = Object.entries(data)
-    .map(([key, value]) => `${key}: ${value}`)
-    .join('\n')
+function toInlineArray(values: string[]): string {
+  if (values.length === 0)
+    return '[]'
 
-  return `---\n${frontmatter}\n---`
+  return `[${values.map(value => `'${escapeYamlString(value)}'`).join(', ')}]`
+}
+
+function escapeYamlString(value: string): string {
+  return value.replace(SINGLE_QUOTE_RE, ESCAPED_SINGLE_QUOTE)
+}
+
+function getPostTemplate(data: {
+  title: string
+  pubDate: string
+  categories: string[]
+  draft: boolean
+  description: string
+}): string {
+  return [
+    '---',
+    `title: '${escapeYamlString(data.title)}'`,
+    `pubDate: ${data.pubDate}`,
+    `categories: ${toInlineArray(data.categories)}`,
+    `draft: ${data.draft}`,
+    `description: '${escapeYamlString(data.description)}'`,
+    '---',
+    '',
+    TEMPLATE_BODY,
+    '',
+  ].join('\n')
 }
