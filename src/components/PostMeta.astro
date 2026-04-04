@@ -1,25 +1,57 @@
 ---
 import type { Post } from '~/types'
-import { formatDate } from '~/utils'
+import { formatDate, getPostUrl } from '~/utils'
 import PostCategory from './PostCategory.astro'
 
 interface Props {
   post: Post
+  headingTag?: 'h1' | 'h2'
+  linkTitle?: boolean
 }
 
-const { post } = Astro.props
+const { post, headingTag = 'h1', linkTitle = true } = Astro.props
 const { translate: t } = Astro.locals
 
 const categoryList = post.data.categories ?? []
 ---
 
 <header flex="~ col gap-2">
-  <h1 class="post-title">
-    <a class="not-prose" href={`/posts/${post.id}/`}>{post.data.title}</a>
-  </h1>
-  <div class="text-3.5">
+  {
+    headingTag === 'h1'
+      ? (
+          <h1 class="post-title post-title-l1">
+            {
+              linkTitle
+                ? <a class="not-prose" href={getPostUrl(post.id)}>{post.data.title}</a>
+                : <span class="not-prose">{post.data.title}</span>
+            }
+          </h1>
+        )
+      : (
+          <h2 class="post-title post-title-l2">
+            {
+              linkTitle
+                ? <a class="not-prose" href={getPostUrl(post.id)}>{post.data.title}</a>
+                : <span class="not-prose">{post.data.title}</span>
+            }
+          </h2>
+        )
+  }
+  <p class="text-3.5">
     <span>{t(post.data.modDate ? 'updated_at' : 'posted_at')}</span>
     <time>{formatDate(post.data.modDate ?? post.data.pubDate)}</time>
-    {categoryList.map((category) => <PostCategory category={category} />)}
-  </div>
+    {categoryList.map(category => <PostCategory category={category} />)}
+  </p>
 </header>
+
+<style>
+  .post-title-l1 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  .post-title-l2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+</style>
