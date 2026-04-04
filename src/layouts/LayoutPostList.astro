@@ -13,5 +13,14 @@ const { post } = Astro.props
   class="prose max-w-none prose-headings:font-header prose-headings:font-bold prose-headings:c-primary prose-a:c-primary"
 >
   <PostMeta post={post} headingTag="h2" linkTitle={true} />
-  <slot />
+  <div class="post-list-preview">
+    <slot />
+  </div>
 </article>
+
+<style>
+  .post-list-preview :global(p) {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+  }
+</style>
