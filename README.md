@@ -6,11 +6,6 @@ A personal blog powered by **Astro 6** and based on the `astro-theme-typography`
 - Runtime: static site generation (SSG)
 - Primary stack: Astro + TypeScript + UnoCSS + MD/MDX content collections
 
-This README is intentionally detailed for both:
-
-1. **Humans** onboarding quickly.
-2. **AI coding agents** making safe, consistent changes.
-
 ---
 
 ## 1) What this repository contains
