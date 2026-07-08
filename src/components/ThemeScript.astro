@@ -1,33 +1,20 @@
 ---
-import { themeConfig } from "~/.config";
+import { themeConfig } from '~/.config'
 
-const theme = themeConfig.appearance.theme;
+const theme = themeConfig.appearance.theme
 ---
 
 <script is:inline define:vars={{ theme }}>
-  function updateTheme(theme) {
-    // Check if theme is system
-    if (theme === "system") {
-      // Check OS preference
-      const prefersDark = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-      ).matches;
-      document.documentElement.classList.toggle("dark", prefersDark);
-    } else {
-      // Set theme directly
-      document.documentElement.classList.toggle("dark", theme === "dark");
-    }
+  const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+
+  function setTheme() {
+    const isDark = theme === 'dark' || (theme === 'system' && mediaQuery.matches)
+    document.documentElement.classList.toggle('dark', isDark)
+    document.documentElement.dataset.theme = isDark ? 'dark' : 'light'
   }
 
-  // Initial theme setup
-  updateTheme(theme);
+  setTheme()
 
-  // Listen for OS theme changes
-  window
-    .matchMedia("(prefers-color-scheme: dark)")
-    .addEventListener("change", (e) => {
-      if (theme === "system") {
-        document.documentElement.classList.toggle("dark", e.matches);
-      }
-    });
+  if (theme === 'system')
+    mediaQuery.addEventListener('change', setTheme)
 </script>
