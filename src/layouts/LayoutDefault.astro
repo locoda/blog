@@ -10,7 +10,8 @@ import ThemeScript from '~/components/ThemeScript.astro'
 import '~/styles/global.css'
 
 const lang = themeConfig.appearance.locale ?? 'en-us'
-const dark = themeConfig.appearance.theme === 'dark'
+const initialTheme = themeConfig.appearance.theme
+const dark = initialTheme === 'dark'
 ---
 
 <html lang={lang} class:list={['animation-prepared', { dark }]}>

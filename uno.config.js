@@ -7,37 +7,50 @@ import {
   presetWind4,
   transformerVariantGroup,
 } from 'unocss'
-import presetTheme from 'unocss-preset-theme'
 import { themeConfig } from './src/.config'
 
 const { colorsDark, colorsLight, fonts } = themeConfig.appearance
 
-const cssExtend = {
-  ':root': {
-    '--prose-borders': '#eee',
-  },
+function makeThemeVars(colors, shadow) {
+  return {
+    '--color-primary': colors.primary,
+    '--color-background': colors.background,
+    '--color-shadow': shadow,
+  }
+}
 
+const cssExtend = {
   'code::before,code::after': {
     content: 'none',
   },
 
   ':where(:not(pre):not(a) > code)': {
     'white-space': 'normal',
-    'word-wrap': 'break-word',
-    'padding': '2px 4px',
+    'overflow-wrap': 'anywhere',
+    'padding': '0.125rem 0.25rem',
     'color': '#c7254e',
-    'font-size': '90%',
+    'font-size': '0.9em',
     'background-color': '#f9f2f4',
-    'border-radius': '4px',
+    'border-radius': '0.25rem',
+  },
+
+  '.dark :where(:not(pre):not(a) > code)': {
+    'color': '#fda4af',
+    'background-color': 'rgb(255 255 255 / 0.08)',
   },
 
   'li': {
     'white-space': 'normal',
-    'word-wrap': 'break-word',
+    'overflow-wrap': 'anywhere',
   },
 }
 
 export default defineConfig({
+  preflights: [
+    {
+      getCSS: () => `:root{${Object.entries(makeThemeVars(colorsLight, '#0000000A')).map(([key, value]) => `${key}:${value}`).join(';')}}.dark{${Object.entries(makeThemeVars(colorsDark, '#FFFFFF0A')).map(([key, value]) => `${key}:${value}`).join(';')}}`,
+    },
+  ],
   rules: [
     [
       /^row-(\d+)-(\d)$/,
@@ -49,7 +62,7 @@ export default defineConfig({
     ],
     [
       /^scrollbar-hide$/,
-      ([_]) => `.scrollbar-hide { scrollbar-width:none;-ms-overflow-style: none; }
+      () => `.scrollbar-hide { scrollbar-width:none;-ms-overflow-style: none; }
       .scrollbar-hide::-webkit-scrollbar {display:none;}`,
     ],
   ],
@@ -58,21 +71,18 @@ export default defineConfig({
     presetTypography({ cssExtend }),
     presetAttributify(),
     presetIcons({ scale: 1.2, warn: true }),
-    presetTheme ({
-      theme: {
-        dark: {
-          colors: { ...colorsDark, shadow: '#FFFFFF0A' },
-          // TODO 需要配置代码块颜色
-        },
-      },
-    }),
   ],
   theme: {
-    colors: { ...colorsLight, shadow: '#0000000A' },
+    colors: {
+      primary: 'var(--color-primary)',
+      background: 'var(--color-background)',
+      shadow: 'var(--color-shadow)',
+    },
     fontFamily: fonts,
   },
   shortcuts: [
     ['post-title', 'text-5 font-bold lh-7.5 m-0'],
+    ['post-prose', 'prose max-w-none'],
   ],
   transformers: [transformerDirectives(), transformerVariantGroup()],
   safelist: [
