@@ -1,3 +1,4 @@
+import type { RehypePlugins } from 'astro'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import swup from '@swup/astro'
@@ -18,7 +19,7 @@ export default defineConfig({
       remarkMath,
     ],
     rehypePlugins: [
-      rehypeKatex,
+      rehypeKatex as RehypePlugins[number],
     ],
     shikiConfig: {
       theme: 'dracula',
