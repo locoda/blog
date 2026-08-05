@@ -1,4 +1,5 @@
-import type { RehypePlugins } from 'astro'
+import type { RehypePlugins } from '@astrojs/markdown-remark'
+import { unified } from '@astrojs/markdown-remark'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import swup from '@swup/astro'
@@ -15,12 +16,14 @@ export default defineConfig({
   prefetch: true,
   base: '/',
   markdown: {
-    remarkPlugins: [
-      remarkMath,
-    ],
-    rehypePlugins: [
-      rehypeKatex as RehypePlugins[number],
-    ],
+    processor: unified({
+      remarkPlugins: [
+        remarkMath,
+      ],
+      rehypePlugins: [
+        rehypeKatex as RehypePlugins[number],
+      ],
+    }),
     shikiConfig: {
       theme: 'dracula',
       wrap: true,
