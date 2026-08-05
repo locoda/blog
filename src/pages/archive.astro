@@ -1,4 +1,5 @@
 ---
+import PostTitle from '~/components/PostTitle.astro'
 import LayoutDefault from '~/layouts/LayoutDefault.astro'
 import type { Post } from '~/types'
 import { getPostUrl, getPosts } from '~/utils'
@@ -23,12 +24,16 @@ function getYearMap(posts: Post[]) {
     {
       yearMap.map(([year, posts]) => (
         <section flex="~ col gap-7.5">
-          <h2 class="post-title">{year}</h2>
-          <ul class="pl-6" flex="~ col gap-4">
+          {/* The entries below are no longer underlined, so the year needs to
+              step back on its own to stay readable as a section marker. */}
+          <h2 class="post-title tracking-0.08em op-45">{year}</h2>
+          <ul class="post-list" flex="~ col gap-4">
             {posts.map((post) => (
               <li>
                 <h3 class="post-title">
-                  <a href={getPostUrl(post.id)}>{post.data.title}</a>
+                  <a href={getPostUrl(post.id)}>
+                    <PostTitle title={post.data.title} />
+                  </a>
                 </h3>
               </li>
             ))}

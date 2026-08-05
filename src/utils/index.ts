@@ -68,3 +68,31 @@ export function getPathFromCategory(
 export function getPostUrl(postId: string) {
   return `/posts/${postId}/`
 }
+
+/**
+ * Splits a serial number off the front of a title so it can be set apart
+ * typographically — `Vol.34/ 痕迹` becomes `Vol.34` + `痕迹`.
+ *
+ * The separator has to be a slash followed by whitespace, and the serial has
+ * to contain a digit. Both conditions are needed: a title like
+ * `关于日剧下载/转写/机翻的工具介绍` uses slashes as ordinary punctuation and
+ * must come through untouched.
+ */
+export function splitPostTitle(title: string) {
+  const plain = { serial: null, name: title }
+
+  const slash = title.indexOf('/')
+  if (slash === -1)
+    return plain
+
+  const serial = title.slice(0, slash)
+  const rest = title.slice(slash + 1)
+  const name = rest.trimStart()
+
+  // `name === rest` means nothing was trimmed, so the slash was not followed
+  // by whitespace and is ordinary punctuation rather than a separator.
+  if (name === rest || name === '' || !/\d/.test(serial))
+    return plain
+
+  return { serial, name }
+}

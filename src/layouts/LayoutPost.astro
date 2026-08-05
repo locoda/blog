@@ -4,14 +4,28 @@ import type { Post } from '~/types'
 
 interface Props {
   post: Post
+  /** Render as a linked excerpt in a list rather than as the article itself. */
+  excerpt?: boolean
 }
 
-const { post } = Astro.props
+const { post, excerpt = false } = Astro.props
 ---
 
 <article
-  class="post-prose prose-headings:font-header prose-headings:font-bold prose-headings:c-primary prose-a:c-primary"
+  class:list={[
+    'post-prose prose-headings:font-header prose-headings:font-bold prose-headings:c-primary prose-a:c-primary',
+    excerpt && 'post-excerpt',
+  ]}
 >
-  <PostMeta post={post} headingTag="h1" linkTitle={false} />
+  <PostMeta post={post} headingTag={excerpt ? 'h2' : 'h1'} linkTitle={excerpt} />
   <slot />
 </article>
+
+<style>
+  /* The excerpt is a single paragraph passed as the slot; `>` keeps this off
+     the meta line, which sits inside the header. */
+  .post-excerpt > :global(p) {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+  }
+</style>
