@@ -22,12 +22,31 @@ html {
     linear-gradient(to bottom, var(--color-shadow) 1px, transparent 1px);
 }
 
-.prose {
+/* Article text follows the theme colour.
+ *
+ * These have to be hung on `.post-prose`, not `.prose`: `post-prose` is an
+ * UnoCSS shortcut, so the markup only ever carries that class and a `.prose`
+ * rule matches nothing. Article text was therefore still on presetTypography's
+ * light-mode defaults — close enough to the navy to pass unnoticed in light
+ * mode, but dark grey on near-black once dark mode kicked in.
+ *
+ * `--un-prose-borders` was likewise a name the preset does not read; the
+ * border colours are per-element (hr, quotes, table cells). */
+.prose,
+.post-prose {
   --un-prose-body: var(--color-primary);
   --un-prose-headings: var(--color-primary);
+  --un-prose-lead: var(--color-primary);
   --un-prose-links: var(--color-primary);
   --un-prose-bold: var(--color-primary);
-  --un-prose-borders: color-mix(in srgb, var(--color-primary) 18%, transparent);
+  --un-prose-quotes: var(--color-primary);
+  --un-prose-counters: color-mix(in srgb, var(--color-primary) 70%, transparent);
+  --un-prose-captions: color-mix(in srgb, var(--color-primary) 65%, transparent);
+  --un-prose-bullets: color-mix(in srgb, var(--color-primary) 45%, transparent);
+  --un-prose-th-borders: color-mix(in srgb, var(--color-primary) 30%, transparent);
+  --un-prose-quote-borders: color-mix(in srgb, var(--color-primary) 25%, transparent);
+  --un-prose-hr: color-mix(in srgb, var(--color-primary) 18%, transparent);
+  --un-prose-td-borders: color-mix(in srgb, var(--color-primary) 18%, transparent);
 }
 
 /* Links
