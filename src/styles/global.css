@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Noto+Serif+SC:wght@400;700&display=swap');
+/* Web fonts are linked from `WebFonts.astro` rather than @import-ed here:
+   an @import makes this whole stylesheet wait on fonts.googleapis.com. */
 
 :root {
   color-scheme: light;
@@ -29,7 +30,32 @@ html {
   --un-prose-borders: color-mix(in srgb, var(--color-primary) 18%, transparent);
 }
 
+/* Links
+ * Inline links keep a typographic underline, but a hairline one that clears
+ * the glyphs instead of the heavy rule that used to sit on top of CJK
+ * descenders. Structural links — post titles, navigation, category tags —
+ * drop it entirely: they already read as links by size and position, and a
+ * list of them turned into a wall of underscores.
+ * Hover keeps the theme's inverted block, with the underline folded into it. */
 :where(a):not(.not-underline-hover) {
-  --at-apply: 'p-1.5px decoration-underline decoration-0.1em decoration-offset-2px ease-in-out duration-300ms';
-  --at-apply: 'hover:(c-background bg-primary decoration-primary)';
+  --at-apply: 'p-1.5px ease-in-out duration-300ms';
+  --at-apply: 'hover:(c-background bg-primary)';
+
+  text-decoration-line: underline;
+  text-decoration-thickness: max(1px, 0.055em);
+  text-decoration-color: color-mix(in srgb, var(--color-primary) 40%, transparent);
+  text-underline-offset: 0.2em;
+  text-decoration-skip-ink: auto;
+}
+
+:where(a):not(.not-underline-hover):hover {
+  text-decoration-color: transparent;
+}
+
+/* Specificity has to clear the `:not(.not-underline-hover)` above, so these
+   stay plain class selectors rather than `:where()`. */
+.post-title a,
+.site-nav a,
+a.post-tag {
+  text-decoration-line: none;
 }

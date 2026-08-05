@@ -15,7 +15,17 @@ const { title, subtitle } = themeConfig.site
     hover:lg=" bg-primary color-background"
     href="/"
   >
-    <h3 class="text-5 font-extrabold font-header">{subtitle}</h3>
-    <h1 class="text-8 font-extrabold font-header">{title}</h1>
+    {/* On narrow screens the masthead is a centred stack, so the subtitle is
+        set as a letter-spaced kicker instead of competing with the title.
+        The desktop column keeps its original proportions. */}
+    <h3
+      class="font-header font-extrabold text-3.5 tracking-0.3em indent-[0.15em] op-60"
+      lg="text-5 tracking-normal indent-0 op-100"
+    >
+      {subtitle}
+    </h3>
+    <h1 class="font-header font-extrabold text-8 tracking-0.05em indent-[0.025em]" lg="tracking-normal indent-0">
+      {title}
+    </h1>
   </a>
 </hgroup>

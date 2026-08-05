@@ -1,0 +1,16 @@
+---
+const href
+  = 'https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Noto+Serif+SC:wght@400;700&display=swap'
+---
+
+{/*
+  Loaded out of the critical path: `media="print"` keeps the request
+  non-render-blocking, and it is promoted to `all` once it arrives. Importing
+  this from `global.css` instead made the whole site stylesheet hostage to
+  fonts.googleapis.com — unreachable from some networks, which left mobile
+  visitors staring at unstyled markup.
+*/}
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href={href} media="print" onload="this.media='all'" />
+<noscript><link rel="stylesheet" href={href} /></noscript>

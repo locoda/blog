@@ -4,14 +4,20 @@ import { themeConfig } from '~/.config'
 const { latex } = themeConfig
 
 const katex = latex.katex
+const href = 'https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css'
 ---
 
+{/*
+  Non-render-blocking: a slow CDN here used to stall the parser at the inline
+  theme script that follows, delaying the whole page.
+*/}
 {
   katex && (
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"
-      crossorigin="anonymous"
-    />
+    <>
+      <link rel="stylesheet" href={href} crossorigin="anonymous" media="print" onload="this.media='all'" />
+      <noscript>
+        <link rel="stylesheet" href={href} crossorigin="anonymous" />
+      </noscript>
+    </>
   )
 }

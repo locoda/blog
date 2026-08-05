@@ -1,0 +1,17 @@
+---
+import { themeConfig } from '~/.config'
+
+const { colorsLight, colorsDark, fonts } = themeConfig.appearance
+
+// Inlined so the very first paint already uses the theme colours and fonts.
+// Without it, any stall on a third-party stylesheet leaves the page on UA
+// defaults — Times New Roman body text and blue/purple links.
+const criticalCss = `
+:root{color-scheme:light;--color-primary:${colorsLight.primary};--color-background:${colorsLight.background}}
+:root.dark{color-scheme:dark;--color-primary:${colorsDark.primary};--color-background:${colorsDark.background}}
+html{background-color:var(--color-background);color:var(--color-primary);font-family:${fonts.ui}}
+a{color:inherit;text-decoration:none}
+`
+---
+
+<style is:inline set:html={criticalCss}></style>
