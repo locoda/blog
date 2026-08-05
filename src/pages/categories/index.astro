@@ -20,14 +20,14 @@ function getListFromMap(map: typeof categoryMap) {
 <LayoutDefault>
   <section>
     <h2 class="post-title">{t('Categories')}</h2>
-    <ul class="pl-6" flex="~ col gap-4">
+    <ul class="post-list" flex="~ col gap-4">
       {
         list.map(({ title, href, size }) => (
           <li>
             <h3 class="post-title">
               <a href={href}># {title}</a>
             </h3>
-            <p>{size}</p>
+            <p class="post-meta text-3.5">{size}</p>
           </li>
         ))
       }

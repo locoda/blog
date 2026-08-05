@@ -1,5 +1,6 @@
 ---
 import { themeConfig } from '~/.config'
+import PostTitle from '~/components/PostTitle.astro'
 import LayoutDefault from '~/layouts/LayoutDefault.astro'
 import type { Post } from '~/types'
 import { formatDate, getCategories, getPathFromCategory, getPostUrl } from '~/utils'
@@ -30,14 +31,16 @@ function getListItems(posts: Post[]) {
 <LayoutDefault>
   <section>
     <h2 class="post-title"># {name}</h2>
-    <ul class="pl-6 py-3" flex="~ col gap-4">
+    <ul class="post-list py-3" flex="~ col gap-4">
       {
         getListItems(posts).map(({ title, href, date }) => (
           <li>
             <h3 class="post-title">
-              <a href={href}>{title}</a>
+              <a href={href}>
+                <PostTitle title={title} />
+              </a>
             </h3>
-            <time>{date}</time>
+            <time class="post-meta text-3.5">{date}</time>
           </li>
         ))
       }

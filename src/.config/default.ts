@@ -62,7 +62,9 @@ export const defaultConfig: ThemeConfig = {
       background: '#ffffff',
     },
     colorsDark: {
-      primary: '#FFFFFF',
+      // Not pure white: at #FFFFFF on #232222 the contrast is high enough that
+      // dense CJK strokes bloom into each other.
+      primary: '#E8E6E3',
       background: '#232222',
     },
     fonts: {

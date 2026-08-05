@@ -13,10 +13,12 @@
   font-family: theme('fontFamily.header');
 }
 
+/* No text-shadow: it was set on `html`, so every glyph on the site carried a
+   1px offset copy of itself. Cheap to miss in light mode, but in dark mode it
+   put a halo around white CJK text and cost the whole page its crispness. */
 html {
-  --at-apply: 'antialiased bg-background c-primary font-ui text-shadow-color-shadow';
+  --at-apply: 'antialiased bg-background c-primary font-ui';
 
-  text-shadow: 1px 1px 1px var(--color-shadow);
   background-size: 7px 7px;
   background-image: linear-gradient(to right, var(--color-shadow) 1px, transparent 1px),
     linear-gradient(to bottom, var(--color-shadow) 1px, transparent 1px);
@@ -77,4 +79,77 @@ html {
 .site-nav a,
 a.post-tag {
   text-decoration-line: none;
+}
+
+/* Dates, counts and categories are supporting text — they were sharing the
+   body colour and flattening the hierarchy. Tabular figures keep the dates
+   in a column down a list. */
+.post-meta {
+  --at-apply: 'op-60';
+
+  font-variant-numeric: tabular-nums;
+}
+
+/* Index lists hang off a hairline, and the item under the cursor claims it —
+   the same rule that runs beside the masthead on wide screens, reused so it
+   reads as a motif rather than a one-off. */
+.post-list {
+  --at-apply: 'pl-6';
+
+  border-inline-start: 1px solid color-mix(in srgb, var(--color-primary) 12%, transparent);
+}
+
+.post-list > li,
+.post-entry {
+  position: relative;
+}
+
+.post-list > li::before,
+.post-entry::before {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  width: 2px;
+  background-color: var(--color-primary);
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
+.post-list > li::before {
+  inset-inline-start: calc(-1.5rem - 1px);
+}
+
+/* The marker has to live inside the entry, not out in the page margin:
+   `main` scrolls vertically, which computes overflow-x to `auto` and clips
+   anything hanging off its left edge. */
+.post-entry {
+  --at-apply: 'pl-4';
+}
+
+.post-entry::before {
+  inset-inline-start: 0;
+}
+
+.post-list > li:hover::before,
+.post-entry:hover::before {
+  opacity: 1;
+}
+
+/* Blockquotes: a hanging quotation mark instead of the slab border.
+   `font-style: normal` matters more than it looks — CJK has no italic, so the
+   preset's italic was rendering as a synthesised skew. */
+.post-prose blockquote {
+  position: relative;
+  border-inline-start-width: 0;
+  padding-inline-start: 1.8em;
+  font-style: normal;
+}
+
+.post-prose blockquote p:first-of-type::before {
+  position: absolute;
+  inset-inline-start: 0;
+  top: -0.08em;
+  opacity: 0.28;
+  font-size: 2.6em;
+  line-height: 1;
 }

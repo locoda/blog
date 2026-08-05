@@ -1,0 +1,26 @@
+---
+import { splitPostTitle } from '~/utils'
+
+interface Props {
+  title: string
+}
+
+const { serial, name } = splitPostTitle(Astro.props.title)
+---
+
+{/*
+  The serial is set apart rather than removed: tabular figures and a lighter
+  weight let it read as an issue number in the margin of the title, the way a
+  periodical would set it, instead of as the first word of the sentence.
+*/}
+{serial && <span class="post-serial">{serial}</span>}<span>{name}</span>
+
+<style>
+  .post-serial {
+    --at-apply: 'op-45 font-normal';
+
+    margin-right: 0.4em;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.02em;
+  }
+</style>

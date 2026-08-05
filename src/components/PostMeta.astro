@@ -2,6 +2,7 @@
 import type { Post } from '~/types'
 import { formatDate, getPostUrl } from '~/utils'
 import PostCategory from './PostCategory.astro'
+import PostTitle from './PostTitle.astro'
 
 interface Props {
   post: Post
@@ -13,45 +14,34 @@ const { post, headingTag = 'h1', linkTitle = true } = Astro.props
 const { translate: t } = Astro.locals
 
 const categoryList = post.data.categories ?? []
+
+// The heading tag varies with context, so render it dynamically rather than
+// branching over two near-identical blocks. Sizes are utilities instead of
+// scoped CSS: the `post-title` shortcut carries the default size, and UnoCSS
+// sorts shortcuts ahead of utilities, so these win without a specificity bump.
+const Heading = headingTag
+const headingSize = headingTag === 'h1' ? 'text-8 lh-10' : 'text-6 lh-8'
 ---
 
 <header flex="~ col gap-2">
-  {
-    headingTag === 'h1'
-      ? (
-          <h1 class="post-title post-title-l1">
-            {
-              linkTitle
-                ? <a class="not-prose" href={getPostUrl(post.id)}>{post.data.title}</a>
-                : <span class="not-prose">{post.data.title}</span>
-            }
-          </h1>
-        )
-      : (
-          <h2 class="post-title post-title-l2">
-            {
-              linkTitle
-                ? <a class="not-prose" href={getPostUrl(post.id)}>{post.data.title}</a>
-                : <span class="not-prose">{post.data.title}</span>
-            }
-          </h2>
-        )
-  }
-  <p class="text-3.5">
+  <Heading class:list={['post-title', headingSize]}>
+    {
+      linkTitle
+        ? (
+            <a class="not-prose" href={getPostUrl(post.id)}>
+              <PostTitle title={post.data.title} />
+            </a>
+          )
+        : (
+            <span class="not-prose">
+              <PostTitle title={post.data.title} />
+            </span>
+          )
+    }
+  </Heading>
+  <p class="post-meta text-3.5">
     <span>{t(post.data.modDate ? 'updated_at' : 'posted_at')}</span>
     <time>{formatDate(post.data.modDate ?? post.data.pubDate)}</time>
     {categoryList.map(category => <PostCategory category={category} />)}
   </p>
 </header>
-
-<style>
-  .post-title-l1 {
-    font-size: 2rem;
-    line-height: 2.5rem;
-  }
-
-  .post-title-l2 {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-</style>
