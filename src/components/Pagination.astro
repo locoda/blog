@@ -1,57 +1,50 @@
 ---
-const { translate: t } = Astro.locals
-
-interface Props {
-  showLeft?: boolean
-  leftTitle?: string
-  leftUrl?: string
-
-  showRight?: boolean
-  rightTitle?: string
-  rightUrl?: string
-
-  showPageCount?: boolean
-  currentPage?: number
-  totalPage?: number
+interface Step {
+  title: string
+  /** Absent at the ends of the sequence, where the step is not rendered. */
+  url?: string
 }
 
-const {
-  showLeft = true,
-  showRight = true,
-  leftTitle,
-  rightTitle,
-  leftUrl,
-  rightUrl,
-  showPageCount = true,
-  currentPage,
-  totalPage,
-} = Astro.props
+interface Props {
+  prev?: Step
+  next?: Step
+  page?: { current: number, total: number }
+}
+
+const { prev, next, page } = Astro.props
+const { translate: t } = Astro.locals
 ---
 
 <footer class="mt-5">
   {
-    showPageCount && (
-      <div class="mb-2.5">
-        {t('page_number', currentPage)} / {t('page_count', totalPage)}
+    page && (
+      <div class="post-meta mb-2.5">
+        {t('page_number', page.current)} / {t('page_count', page.total)}
       </div>
     )
   }
-  <div class="flex items-center gap-2">
+  {/*
+    `shrink-0` is what makes this behave: steps keep their natural width, so
+    short ones ("上一页") share a row and long ones (a post title) take a row
+    each instead of wrapping into each other. `truncate` catches the titles
+    too long for even a full row — the whole title stays in `title`.
+  */}
+  <nav flex="~ wrap gap-2 items-center">
     {
-      showLeft && (
-        <a title={leftTitle} href={leftUrl}>
+      prev?.url && (
+        <a class="shrink-0 max-w-full truncate" title={prev.title} href={prev.url}>
           <span class="inline-block vertical-mid i-mdi-chevron-double-left w-4 h-4" />
-          {leftTitle}
+          {prev.title}
         </a>
       )
     }
     {
-      showRight && (
-        <a title={rightTitle} href={rightUrl}>
-          {rightTitle}
+      next?.url && (
+        <a class="shrink-0 max-w-full truncate ml-auto" title={next.title} href={next.url}>
+          {next.title}
           <span class="inline-block vertical-mid i-mdi-chevron-double-right w-4 h-4" />
         </a>
       )
     }
-  </div>
+  </nav>
 </footer>

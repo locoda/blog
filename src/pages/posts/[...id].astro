@@ -37,13 +37,8 @@ const { translate: t } = Astro.locals
   </LayoutPost>
 
   <Pagination
-    showLeft={Boolean(prev)}
-    leftTitle={`${t('prev_post')}: ${prev?.data.title}`}
-    leftUrl={prev ? getPostUrl(prev.id) : undefined}
-    showRight={Boolean(next)}
-    rightTitle={`${t('next_post')}: ${next?.data.title}`}
-    rightUrl={next ? getPostUrl(next.id) : undefined}
-    showPageCount={false}
+    prev={prev && { title: `${t('prev_post')}: ${prev.data.title}`, url: getPostUrl(prev.id) }}
+    next={next && { title: `${t('next_post')}: ${next.data.title}`, url: getPostUrl(next.id) }}
   />
   <!-- BUG 这里使用 client:visible 会导致构建失败。ref: https://github.com/withastro/astro/issues/7329 -->
   <Comments post={entry} />
